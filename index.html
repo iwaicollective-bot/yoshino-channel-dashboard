@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吉野敏明チャンネル — 情報分析ダッシュボード</title>
+<style>
+  :root {
+    --green-dark: #1a3a2a;
+    --green-mid: #2d6a4f;
+    --green-light: #52b788;
+    --green-pale: #d8f3dc;
+    --brown-dark: #3d2b1f;
+    --brown-mid: #744210;
+    --brown-light: #c9a84c;
+    --brown-pale: #fdf3e3;
+    --gray-900: #111827;
+    --gray-800: #1f2937;
+    --gray-700: #374151;
+    --gray-200: #e5e7eb;
+    --gray-100: #f3f4f6;
+    --red-badge: #dc2626;
+    --yellow-badge: #d97706;
+    --green-badge: #059669;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+    background: var(--gray-900);
+    color: var(--white);
+    min-height: 100vh;
+  }
+
+  /* ===== PASSWORD SCREEN ===== */
+  #password-screen {
+    position: fixed; inset: 0;
+    background: linear-gradient(135deg, #0d2e1a 0%, #1a3a2a 50%, #0d1f17 100%);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+  }
+  .pw-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(82,183,136,0.3);
+    border-radius: 16px;
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    backdrop-filter: blur(12px);
+  }
+  .pw-logo {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  .pw-box h1 {
+    font-size: 1.1rem;
+    color: var(--green-light);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .pw-box p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+  }
+  .pw-box input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(82,183,136,0.4);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    outline: none;
+  }
+  .pw-box input:focus { border-color: var(--green-light); }
+  .pw-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--green-mid);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .pw-btn:hover { background: var(--green-light); }
+  .pw-error {
+    color: #f87171;
+    font-size: 0.8rem;
+    margin-top: 8px;
+    display: none;
+  }
+  .pw-disclaimer {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+
+  /* ===== MAIN APP ===== */
+  #app { display: none; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(90deg, #0d2e1a, #1a3a2a);
+    border-bottom: 1px solid rgba(82,183,136,0.2);
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-left {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .header-logo { font-size: 24px; }
+  .header-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--green-light);
+    line-height: 1.2;
+  }
+  .header-sub {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.5);
+  }
+  .header-right {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .yt-link {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,0,0,0.8);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .yt-link:hover { background: #ff0000; }
+  .last-updated {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Navigation */
+  .nav {
+    background: var(--gray-800);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-btn.active {
+    color: var(--green-light);
+    border-bottom-color: var(--green-light);
+  }
+  .nav-btn:hover { color: var(--white); }
+  .nav-btn.history-tab.active {
+    color: var(--brown-light);
+    border-bottom-color: var(--brown-light);
+  }
+
+  /* Main content */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-count {
+    background: rgba(255,255,255,0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* Badge filter */
+  .badge-filter {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+  }
+  .filter-btn {
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-color: rgba(255,255,255,0.4);
+  }
+
+  /* Article cards */
+  .articles-grid {
+    display: grid;
+    gap: 16px;
+  }
+  .article-card {
+    background: var(--gray-800);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .article-card:hover {
+    border-color: rgba(82,183,136,0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .badge-red { background: rgba(220,38,38,0.2); color: #f87171; border: 1px solid rgba(220,38,38,0.4); }
+  .badge-yellow { background: rgba(217,119,6,0.2); color: #fbbf24; border: 1px solid rgba(217,119,6,0.4); }
+  .badge-green { background: rgba(5,150,105,0.2); color: #34d399; border: 1px solid rgba(5,150,105,0.4); }
+
+  .card-meta {
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  }
+  .card-category {
+    font-size: 0.7rem;
+    color: var(--green-light);
+    background: rgba(45,106,79,0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .card-date {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+  }
+  .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+  .card-summary {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .yoshino-reading-preview {
+    background: linear-gradient(135deg, rgba(45,106,79,0.2), rgba(26,58,42,0.3));
+    border-left: 3px solid var(--green-light);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .yoshino-reading-preview strong {
+    color: var(--green-light);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+  }
+  .card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .card-tags {
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.06);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .credibility {
+    display: flex; gap: 3px;
+  }
+  .star { color: #fbbf24; font-size: 0.75rem; }
+  .star-empty { color: rgba(255,255,255,0.2); font-size: 0.75rem; }
+  .sources-link {
+    font-size: 0.73rem;
+    color: var(--green-light);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sources-link:hover { text-decoration: underline; }
+
+  /* History section */
+  #section-history { display: none; }
+
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .series-card {
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .series-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.25);
+  }
+  .series-card.active { border-color: rgba(255,255,255,0.4); }
+  .series-icon { font-size: 28px; margin-bottom: 10px; }
+  .series-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .series-desc {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .series-ep-count {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .series-angle {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-top: 8px;
+    line-height: 1.5;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 8px;
+  }
+
+  /* History episode list */
+  .episode-section-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--brown-light);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .episode-cards {
+    display: grid; gap: 12px;
+  }
+  .episode-card {
+    background: var(--gray-800);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+  .episode-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    transform: translateX(4px);
+  }
+  .ep-num {
+    width: 36px; height: 36px;
+    background: rgba(116,66,16,0.4);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brown-light);
+    flex-shrink: 0;
+  }
+  .ep-status {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+  .ep-status.published {
+    background: rgba(5,150,105,0.2);
+    color: #34d399;
+    border: 1px solid rgba(5,150,105,0.3);
+  }
+  .ep-status.planned {
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .ep-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .ep-summary {
+    font-size: 0.77rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .ep-angle {
+    font-size: 0.74rem;
+    color: var(--brown-light);
+    background: rgba(116,66,16,0.15);
+    border-left: 2px solid var(--brown-light);
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.5;
+  }
+  .ep-angle strong {
+    display: block;
+    font-size: 0.68rem;
+    margin-bottom: 2px;
+    opacity: 0.8;
+  }
+  .ep-sources {
+    margin-top: 8px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .ep-source-link {
+    font-size: 0.68rem;
+    color: var(--brown-light);
+    text-decoration: none;
+    background: rgba(116,66,16,0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .ep-source-link:hover { background: rgba(116,66,16,0.3); }
+  .ep-duration {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 6px;
+  }
+
+  /* Script generator button */
+  .script-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--brown-mid), #a05c28);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 12px;
+  }
+  .script-btn:hover { opacity: 0.85; }
+
+  /* Article modal */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 500;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+  .modal {
+    background: var(--gray-800);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
+    padding: 28px;
+    margin: auto;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.2); }
+  .modal-badge { margin-bottom: 12px; }
+  .modal-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .modal-meta {
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .modal-section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--green-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+  .modal-summary {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 4px;
+  }
+  .modal-yoshino {
+    background: linear-gradient(135deg, rgba(45,106,79,0.25), rgba(26,58,42,0.35));
+    border: 1px solid rgba(82,183,136,0.25);
+    border-left: 3px solid var(--green-light);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+    margin-top: 4px;
+  }
+  .modal-sources {
+    margin-top: 4px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .modal-source-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+  .modal-source-dot {
+    width: 6px; height: 6px;
+    background: var(--green-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .modal-source-link {
+    color: var(--green-light);
+    text-decoration: none;
+  }
+  .modal-source-link:hover { text-decoration: underline; }
+  .modal-disclaimer {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.5;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Disclaimer banner */
+  .disclaimer-banner {
+    background: rgba(217,119,6,0.1);
+    border: 1px solid rgba(217,119,6,0.3);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .disclaimer-icon { font-size: 1rem; flex-shrink: 0; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .header { padding: 0 12px; }
+    .header-title { font-size: 0.82rem; }
+    .container { padding: 16px 12px; }
+    .modal { padding: 20px; }
+    .series-grid { grid-template-columns: 1fr; }
+    .yt-link span { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="password-screen">
+  <div class="pw-box">
+    <div class="pw-logo">🌿</div>
+    <h1>吉野敏明チャンネル</h1>
+    <p>情報分析ダッシュボード — 関係者専用</p>
+    <input type="password" id="pw-input" placeholder="パスワードを入力" maxlength="30" autocomplete="current-password">
+    <button class="pw-btn" onclick="checkPassword()">アクセスする</button>
+    <p class="pw-error" id="pw-error">パスワードが違います</p>
+    <p class="pw-disclaimer">
+      本サイトの情報は動画制作参考用です。<br>
+      医療アドバイスではありません。
+    </p>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <span class="header-logo">🌿</span>
+      <div>
+        <div class="header-title">吉野敏明チャンネル</div>
+        <div class="header-sub">情報分析ダッシュボード</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <a href="https://www.youtube.com/@yoshinodo" target="_blank" class="yt-link">
+        ▶ <span>チャンネルを見る</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showSection('news', this)">📰 健康・食ニュース分析</button>
+    <button class="nav-btn history-tab" onclick="showSection('history', this)">📜 食の歴史シリーズ</button>
+  </nav>
+
+  <!-- NEWS SECTION -->
+  <div id="section-news">
+    <div class="container">
+
+      <div class="disclaimer-banner">
+        <span class="disclaimer-icon">⚠️</span>
+        <span>本ダッシュボードは動画制作のための情報整理ツールです。記載内容は一次資料に基づく情報提供であり、医療診断・治療の推奨ではありません。健康に関する判断は必ず医師・専門家にご相談ください。</span>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title">
+          🔍 健康・食情報 分析レポート
+          <span class="section-count" id="article-count">6本</span>
+        </div>
+      </div>
+
+      <div class="badge-filter">
+        <button class="filter-btn active" onclick="filterArticles('all', this)">すべて</button>
+        <button class="filter-btn" onclick="filterArticles('red', this)">🔴 日本未報道</button>
+        <button class="filter-btn" onclick="filterArticles('yellow', this)">🟡 日本と海外で乖離</button>
+        <button class="filter-btn" onclick="filterArticles('green', this)">🟢 重要背景情報</button>
+      </div>
+
+      <div class="articles-grid" id="articles-grid">
+        <!-- JS で生成 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY SECTION -->
+  <div id="section-history">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-title" style="color: var(--brown-light);">
+          📜 食の歴史シリーズ
+        </div>
+      </div>
+
+      <div class="series-grid" id="series-grid">
+        <!-- JS で生成 -->
+      </div>
+
+      <div id="episode-list-container" style="display:none;">
+        <div class="episode-section-title" id="episode-section-title"></div>
+        <div class="episode-cards" id="episode-cards">
+          <!-- JS で生成 -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ARTICLE MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ===== EMBEDDED DATA =====
+const EMBEDDED_ARTICLES = [{"id": "art001", "title": "Lancet誌が1000万人データで証明：超加工食品が全臓器のリスクを高める", "badge": "red", "badgeLabel": "日本未報道", "category": "食・栄養", "date": "2025-11-20", "summary": "2025年Lancet誌に掲載された超加工食品（UPF）に関する三部作研究が、45の解析のうち71%で超加工食品と健康悪化の直接的関連を示した。大腸がん・心疾患・糖尿病・うつ病・早死にリスクが統計的に有意に上昇することが1000万人規模のデータで確認された。", "yoshinoReading": "これは「食べ物の質」の問題ではなく「食べ物の加工度」の問題。カロリーが同じでも、工業的に製造された食品は腸内細菌叢を破壊し、慢性炎症を引き起こす。西洋医学が長らく「バランスの良い食事」と言い続けてきた間に、何が起きていたのかを改めて問い直す必要がある。", "primarySources": [{"title": "Lancet Regional Health 2025 – Ultra-processed food consumption and health", "url": "https://www.thelancet.com/journals/lanwpc/article/PIIS2666-6065(24)00203-0/fulltext"}, {"title": "BMJ 2024 – Ultra-processed food exposure and adverse health outcomes", "url": "https://www.bmj.com/content/384/bmj-2023-077310"}], "japanSources": [{"media": "戸塚クリニック院長ブログ", "title": "2025年Lancet最新三部作：超加工食品（UPF）の健康リスクと今日からできる対策", "url": "https://totsukaclinic.com/2025/11/20/%E3%80%902025%E5%B9%B4lancet%E7%9B%B4%E8%BF%91%E4%B8%89%E9%83%A8%E4%BD%9C%E3%80%91%E8%B6%85%E5%8A%A0%E5%B7%A5%E9%A3%9F%E5%93%81%EF%BC%88upf%EF%BC%89%E3%81%AE%E5%85%A8%E5%81%A5%E5%BA%B7%E3%83%AA/"}], "credibilityScore": 5, "tags": ["超加工食品", "Lancet", "慢性疾患", "腸内環境"]}, {"id": "art002", "title": "日本で合法の食品着色料「赤色106号」、アメリカ・EU・中国を含む多くの国で禁止", "badge": "yellow", "badgeLabel": "日本と海外で乖離", "category": "食品添加物", "date": "2025-10-01", "summary": "日本の和菓子や福神漬けに使われる赤色106号は、肺がん・食道がんとの関連が指摘されており、欧米・アジア各国で禁止されているが日本では使用継続中。また赤色40号（アレルギーリスク）、黄色4号（子どもの多動との関連）なども日本では認可されているが、EUでは警告表示義務がある。", "yoshinoReading": "これは科学の問題ではなく政治の問題。どの添加物を認可するかは食品業界と規制当局の関係性によって決まる。消費者が「成分表示を読む」習慣を持つことが最大の自衛策。歯周病治療の臨床でも、食品添加物の摂取を控えた患者の炎症マーカーが改善する事例を多数経験している。", "primarySources": [{"title": "消費者庁：添加物規制に関する国際比較（令和4年11月更新）", "url": "https://www.caa.go.jp/policies/policy/standards_evaluation/food_additives/qa_consumers/assets/001008754.pdf"}, {"title": "農林水産省：海外食品添加物規制早見表", "url": "https://www.maff.go.jp/j/shokusan/sanki/soumu/attach/pdf/bunkakai-153.pdf"}], "japanSources": [{"media": "女性セブンプラス", "title": "海外では使用が禁止・制限されているのに日本では使われている添加物が多数", "url": "https://j7p.jp/?p=134538"}], "credibilityScore": 4, "tags": ["食品添加物", "着色料", "国際比較", "規制"]}, {"id": "art003", "title": "グリホサート残留基準値、2017年に日本政府が最大400倍に引き上げ——WHOは発がん性グループ2Aに分類", "badge": "yellow", "badgeLabel": "日本と海外で乖離", "category": "農薬・食の安全", "date": "2025-09-15", "summary": "除草剤グリホサートについて、日本は2017年に残留基準値を大幅緩和（ひまわり種子で0.1→40ppm、400倍）。一方WHOの国際がん研究機関IARCは2015年に発がん性グループ2Aに分類し、欧州では規制強化の流れが続く。輸入小麦・大豆への残留が国内消費者に影響する可能性がある。", "yoshinoReading": "規制緩和のタイミングとアメリカからの農産物輸入拡大は無関係ではない。政治と医療・食の安全は不可分の問題。ただし「危険か安全か」の二項対立ではなく、長期的・累積的リスクを個人でどう管理するかを考えることが重要。国産・有機農産物の選択は一つの合理的な対策。", "primarySources": [{"title": "IARC Monographs Volume 112: Glyphosate", "url": "https://www.iarc.who.int/featured-news/media-centre-iarc-news-glyphosate/"}, {"title": "厚生労働省：グリホサートの残留基準設定審議資料", "url": "https://www.mhlw.go.jp/file/05-Shingikai-11121000-Iyakushokuhinkyoku-Soumuka/0000168500.pdf"}, {"title": "衆議院：農薬グリホサート製剤の一日摂取許容量と安全性に関する質問主意書", "url": "https://www.shugiin.go.jp/internet/itdb_shitsumon.nsf/html/shitsumon/a201188.htm"}], "japanSources": [{"media": "コープ自然派", "title": "グリホサートを取り込みたくない！", "url": "https://www.shizenha.net/glyphosate/"}], "credibilityScore": 4, "tags": ["グリホサート", "農薬", "残留基準", "発がん性", "輸入農産物"]}, {"id": "art004", "title": "WHO・ICD-11が鍼灸・漢方を正式認定、北大がメカニズム解明——東洋医学の科学的根拠が確立へ", "badge": "green", "badgeLabel": "重要背景情報", "category": "東洋医学", "date": "2024-05-15", "summary": "2019年WHO総会でICD-11（国際疾病分類）に東洋医学の章が正式追加。2024年5月のNHKスペシャルでは北海道大学・村上正晃教授らが鍼灸の神経回路メカニズムを解明し注目を集めた。鍼灸は感覚神経→中枢神経系→免疫系への経路で抗炎症効果を発揮することが科学的に証明されつつある。", "yoshinoReading": "漢方・鍼灸の家系11代目として言えることは、先人たちが何千年もかけて臨床から積み上げたエビデンスを、西洋科学がようやく「証明」し始めたということ。重要なのは「なぜ効くか」の理解が進むことで、より精密な治療設計が可能になること。東西医学の統合こそが21世紀の医療の姿。", "primarySources": [{"title": "WHO ICD-11 – Traditional Medicine Chapter", "url": "https://icd.who.int/en"}, {"title": "北海道大学医学部：NHKスペシャル「東洋医学を科学する」出演のお知らせ（2024年5月）", "url": "https://www.med.hokudai.ac.jp/news/2024/0515.html"}], "japanSources": [{"media": "NHK", "title": "NHKスペシャル「東洋医学を科学する〜鍼灸・漢方薬の新たな世界〜」", "url": "https://www.youtube.com/watch?v=GSyL41EpCL8"}], "credibilityScore": 5, "tags": ["東洋医学", "鍼灸", "漢方", "WHO", "ICD-11", "科学的根拠"]}, {"id": "art005", "title": "現代小麦は「別の食べ物」——品種改良でグルテン組成が変化、腸への影響を研究者が指摘", "badge": "green", "badgeLabel": "重要背景情報", "category": "食・栄養", "date": "2024-06-20", "summary": "現代の小麦は品種改良により、消化しづらいグルテンたんぱく質を大量に含むよう変化している。農林水産省の資料によれば、グルテン関連疾患の有病率は米食文化圏のアジアではヨーロッパより顕著に低く、遺伝的因子と摂取頻度の両方が関与。腸内細菌叢への影響も報告されている。", "yoshinoReading": "日本人が本来食べていたのは米を主食にした食事。戦後の食生活変化でパン・麺類の消費が急増し、それと時を同じくして腸の不調や自己免疫疾患が増加している。「パンは体に悪い」と言いたいのではなく、自分の体の反応をきちんと観察することが大切。", "primarySources": [{"title": "農林水産省：グルテン関連の疾患とグルテンフリー", "url": "https://www.maff.go.jp/j/syouan/keikaku/soukatu/okome_summary/04/functio_nality_03.html"}], "japanSources": [{"media": "日本経済新聞", "title": "「グルテンフリー」の落とし穴 医学的に意義ある人は少数", "url": "https://www.nikkei.com/article/DGXZQOSG2882H0Y5A320C2000000/"}], "credibilityScore": 3, "tags": ["小麦", "グルテン", "品種改良", "腸内環境", "食文化"]}, {"id": "art006", "title": "米国HHSが「超加工食品の健康リスクへの対処」を政策議題に——日本の食品行政は無反応", "badge": "red", "badgeLabel": "日本未報道", "category": "医療政策", "date": "2026-01-15", "summary": "2026年1月、米国保健福祉省（HHS）・FDA・USDAが共同で超加工食品の健康リスクを公衆衛生上の重大課題として位置付け、食事ガイドラインを更新。肥満・糖尿病・心血管疾患との関連が政府レベルで認定された。日本の食品安全・厚労省からは同様の動きは現時点で出ていない。", "yoshinoReading": "アメリカが動いた。次はどこかが追随する。日本が動くのはその後。この「タイムラグ」の間に何万人もが予防できたはずの病気にかかる。政経医一体で考えなければ、公衆衛生の問題は解決しない。", "primarySources": [{"title": "GMP Platform：HHS/FDA/USDA 超加工食品の健康リスクに対処", "url": "https://www.gmp-platform.com/article_detail.html?id=32627"}], "japanSources": [], "credibilityScore": 4, "tags": ["超加工食品", "米国食事指針", "食品政策", "公衆衛生"]}];
+const EMBEDDED_HISTORY_ARTICLES = [{"id": "hist001", "seriesId": "series001", "episode": 1, "title": "縄文人の食卓——1万年の採集食が形成した日本人の体質", "status": "planned", "summary": "縄文時代（約1万4000〜2400年前）の食事は、堅果（どんぐり・栗）・魚介・山菜・獣肉の採集食。農耕開始前の多様な食物摂取が腸内細菌の多様性を支えていた。骨格分析から縄文人が現代日本人より虫歯が少なかったことも確認されている。", "yoshinoAngle": "歯科医として注目したいのは縄文時代の虫歯率の低さ。精製糖・精製炭水化物ゼロの食生活が口腔環境に与えた影響を現代データと比較することで、「食べ方の原点」が見えてくる。", "primarySources": [{"title": "国立歴史民俗博物館：縄文時代の食と生活", "url": "https://www.rekihaku.ac.jp/"}, {"title": "農畜産業振興機構：砂糖の歴史（日本への伝播）", "url": "https://www.alic.go.jp/koho/kikaku03_000078.html"}], "tags": ["縄文", "採集食", "虫歯", "腸内環境"], "duration": "約25分"}, {"id": "hist002", "seriesId": "series001", "episode": 2, "title": "天武天皇の肉食禁止令（675年）——1200年続いた食文化の原点", "status": "planned", "summary": "675年に天武天皇が発布した肉食禁止令は、牛・馬・犬・猿・鶏の食用を禁じた。これにより約1200年間、日本人の動物性たんぱく源は主に魚介類と大豆に限られ、世界的に見ても特異な食文化が形成された。この時代の食事と長寿・疾患パターンとの関連を検証する。", "yoshinoAngle": "仏教的価値観と食文化の融合が、結果として健康的な食事パターンを生み出した歴史。「なぜ日本人が長寿なのか」を政治・宗教・食文化の交差点から読み解く。", "primarySources": [{"title": "日本書紀（国立公文書館デジタルアーカイブ）", "url": "https://www.digital.archives.go.jp/"}], "tags": ["肉食禁止令", "天武天皇", "和食", "長寿"], "duration": "約28分"}, {"id": "hist003", "seriesId": "series002", "episode": 1, "title": "GHQ学校給食改革——パンと脱脂粉乳が日本の食を変えた日", "status": "planned", "summary": "1946年のGHQ指令による学校給食改革で、米飯からパン・脱脂粉乳への転換が始まった。米国産小麦・脱脂粉乳の輸入拡大と連動していたこの政策の背景と、その後の日本人の食生活変化を一次資料で追う。「米は頭が悪くなる」という言説の出所も検証。", "yoshinoAngle": "食料政策は農業政策であり外交政策。GHQ文書・農林省公文書・学校給食法の成立過程を読み解くことで、「誰が何のためにこの政策を推進したか」が明確になる。", "primarySources": [{"title": "国立公文書館：GHQ/SCAP文書（学校給食関連）", "url": "https://www.digital.archives.go.jp/"}, {"title": "文部科学省：学校給食の歴史", "url": "https://www.mext.go.jp/a_menu/sports/syokuiku/1292952.htm"}], "tags": ["GHQ", "学校給食", "小麦政策", "占領期", "食料転換"], "duration": "約30分"}, {"id": "hist004", "seriesId": "series002", "episode": 2, "title": "昭和30〜50年代の食生活変容——米消費量激減と生活習慣病急増の相関", "status": "planned", "summary": "1960〜1980年代に米の消費量は半減し、小麦・油脂・砂糖・乳製品の消費が急増。同時期に糖尿病・心疾患・大腸がんの患者数が増加した統計データを、農林水産省・厚生労働省の公式資料をもとに検証する。", "yoshinoAngle": "数字は嘘をつかない。農林水産省の「食料需給表」と厚生労働省の「患者調査」を並べると、何かが見えてくる。これは陰謀論ではなく、公開データから読み取れる事実。", "primarySources": [{"title": "農林水産省：食料需給表（各年版）", "url": "https://www.maff.go.jp/j/zyukyu/fbs/"}, {"title": "厚生労働省：患者調査（昭和・平成・令和各年）", "url": "https://www.mhlw.go.jp/toukei/list/10-20.html"}], "tags": ["食生活変容", "米消費量", "生活習慣病", "統計"], "duration": "約28分"}, {"id": "hist005", "seriesId": "series003", "episode": 1, "title": "明治の開国と砂糖の大衆化——台湾製糖工場建設で「甘味」が庶民に普及", "status": "planned", "summary": "江戸時代まで砂糖は高級品だったが、明治維新後の開国・台湾領有（1895年）による製糖産業発展で大衆化した。昭和に入ると年間生産量が100万トンを超え、甘食・菓子・清涼飲料水の消費が急増。明治〜昭和にかけての砂糖消費量推移を農畜産業振興機構データで追う。", "yoshinoAngle": "砂糖の歴史は植民地政策の歴史でもある。政治・経済・食・健康が一体でつながっている典型例。砂糖依存のメカニズムは現代のスマホ依存と同じ神経回路を使っている。", "primarySources": [{"title": "農畜産業振興機構：砂糖の歴史（日本への伝播）", "url": "https://www.alic.go.jp/koho/kikaku03_000078.html"}, {"title": "精糖工業会：砂糖伝播の歴史", "url": "https://seitokogyokai.com/knowledge/propagation/"}], "tags": ["砂糖", "明治", "台湾", "製糖産業", "食文化"], "duration": "約25分"}, {"id": "hist006", "seriesId": "series004", "episode": 1, "title": "味噌・醤油・納豆——江戸時代の発酵食文化と腸内環境の科学", "status": "planned", "summary": "江戸時代に成熟した発酵食文化（味噌・醤油・納豆・漬物・酒粕）は、現代の腸内フローラ研究で健康効果が次々と実証されている。ナットウキナーゼの血栓溶解作用、味噌の抗酸化効果、乳酸菌による腸内環境改善など、東洋医学の「脾胃が万病の本」という考えを現代科学が証明しつつある。", "yoshinoAngle": "漢方医学では2000年前から腸の重要性を知っていた。現代の「腸活ブーム」は東洋医学の再発見に過ぎない。日本の発酵食文化の深さを、一次資料と最新研究で丁寧に伝えたい。", "primarySources": [{"title": "農林水産省：和食；日本人の伝統的な食文化（ユネスコ登録関連資料）", "url": "https://www.maff.go.jp/j/keikaku/syokubunka/ich/index.html"}, {"title": "日本発酵学会：発酵食品の健康機能", "url": "https://jsf-web.jp/"}], "tags": ["発酵食", "味噌", "納豆", "腸内環境", "東洋医学"], "duration": "約30分"}, {"id": "hist007", "seriesId": "series003", "episode": 2, "title": "戦後の砂糖消費急増と糖尿病患者数の推移——公式統計で見る半世紀", "status": "planned", "summary": "1950年代〜2000年代の砂糖消費量と糖尿病患者数の推移を、農林水産省「食料需給表」と厚生労働省「患者調査」の公式データで比較検証。砂糖消費量の増加曲線と糖尿病有病率の上昇が高い相関を示すことを、グラフで可視化して解説する。", "yoshinoAngle": "「砂糖が糖尿病の原因」という単純化は避けるべきだが、統計的相関は歴然としている。問題は「知っていてもやめられない」砂糖依存のメカニズム——これは神経科学の問題でもある。", "primarySources": [{"title": "農林水産省：食料需給表（時系列データ）", "url": "https://www.maff.go.jp/j/zyukyu/fbs/"}, {"title": "厚生労働省：糖尿病実態調査・患者調査", "url": "https://www.mhlw.go.jp/toukei/list/10-20.html"}], "tags": ["砂糖", "糖尿病", "統計", "食料政策"], "duration": "約25分"}, {"id": "hist008", "seriesId": "series002", "episode": 3, "title": "食料安全保障の視点から見た食料転換政策——自給率低下の構造的原因", "status": "planned", "summary": "日本の食料自給率（カロリーベース）は1960年代の79%から現在38%前後まで低下した。農林水産省の公式データをもとに、この低下が戦後の食料政策（小麦・大豆輸入拡大・農業保護の縮小）とどう連動していたかを検証する。食料安全保障は健康安全保障でもある。", "yoshinoAngle": "食料自給率の低下は「何を食べているか」の変容そのもの。政治・農政・外交・健康が一本の線でつながっているという吉野の視点から、この問題を整理する。", "primarySources": [{"title": "農林水産省：食料自給率・食料自給力について", "url": "https://www.maff.go.jp/j/zyukyu/zikyu_ritu/011.html"}, {"title": "農林水産省：食料・農業・農村基本計画", "url": "https://www.maff.go.jp/j/keikaku/k_agroplan/"}], "tags": ["食料自給率", "食料安全保障", "農政", "食料転換政策"], "duration": "約28分"}];
+const EMBEDDED_HISTORY_SERIES = [{"id": "series001", "title": "日本人の食の原点——縄文・弥生から江戸までの伝統食", "theme": "伝統食", "color": "#5C4033", "episodes": 6, "description": "日本人が数千年かけて形成してきた食文化の歴史。縄文時代の採集食から弥生時代の稲作定着、天武天皇の肉食禁止令、江戸の発酵食文化まで。なぜ和食がユネスコ無形文化遺産に登録されたのかを、健康の視点から読み解く。", "yoshinoAngle": "漢方家系11代目として、先人が「何を食べ、何を食べなかったか」を健康の観点から検証。食文化と疾患統計の関連を歴史データで示す。"}, {"id": "series002", "title": "戦後の食料転換政策——なぜ日本人は米食をやめたのか", "theme": "食料政策", "color": "#4A5568", "episodes": 5, "description": "GHQ占領期から始まった日本の食料政策の転換。学校給食でのパン・脱脂粉乳の導入、「米は頭が悪くなる」キャンペーンの実態、小麦・大豆・乳製品の普及政策の背景を、一次資料をもとに検証する。", "yoshinoAngle": "政治と医療・食の結節点。食料政策が国民の体質・疾患構造をどう変えたかを、戦前と戦後の疾患統計比較で示す。"}, {"id": "series003", "title": "砂糖の近現代史——日本人と精製糖の150年", "theme": "砂糖の歴史", "color": "#744210", "episodes": 4, "description": "明治の開国・台湾領有とともに大量普及した精製白砂糖。戦後の高度成長期に消費量が急増し、生活習慣病増加と軌を一にする歴史的事実を追う。伝統的な甘味（みりん・黒糖・蜂蜜）との違いも解説。", "yoshinoAngle": "臨床データと国内砂糖消費量推移を重ね合わせると見えてくる相関。砂糖依存のメカニズムは現代の超加工食品問題と直結している。"}, {"id": "series004", "title": "発酵食の科学——味噌・醤油・漬物が体を守るメカニズム", "theme": "発酵食文化", "color": "#2D6A4F", "episodes": 5, "description": "日本の発酵食文化（味噌・醤油・納豆・漬物・酒粕）が腸内環境に与える影響を、現代の腸内フローラ研究と照合して解説。江戸時代の長寿村の食事記録や、戦前の地域別疾患データも参照。", "yoshinoAngle": "東洋医学では「脾胃（胃腸）が万病の本」とされてきた。現代の腸内環境研究がこれを証明しつつある。日本の発酵食文化は世界最高水準の腸活だった。"}];
+
+// ===== DATA =====
+let articlesData = [];
+let historyArticlesData = [];
+let historySeriesData = [];
+let currentFilter = 'all';
+let currentSeriesId = null;
+
+// ===== PASSWORD =====
+const PASSWORD = 'yoshino'; // ← 後でここを変更してください
+
+function checkPassword() {
+  const val = document.getElementById('pw-input').value;
+  if (val === PASSWORD) {
+    document.getElementById('password-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    loadData();
+  } else {
+    document.getElementById('pw-error').style.display = 'block';
+    document.getElementById('pw-input').value = '';
+    document.getElementById('pw-input').focus();
+  }
+}
+
+document.getElementById('pw-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkPassword();
+});
+
+// ===== DATA LOADING =====
+async function loadData() {
+  articlesData = EMBEDDED_ARTICLES;
+  historyArticlesData = EMBEDDED_HISTORY_ARTICLES;
+  historySeriesData = EMBEDDED_HISTORY_SERIES;
+  renderArticles();
+  renderSeriesGrid();
+}
+
+// ===== NAVIGATION =====
+function showSection(section, btn) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('section-news').style.display = section === 'news' ? 'block' : 'none';
+  document.getElementById('section-history').style.display = section === 'history' ? 'block' : 'none';
+}
+
+// ===== ARTICLES =====
+function filterArticles(badge, btn) {
+  currentFilter = badge;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderArticles();
+}
+
+function renderArticles() {
+  const grid = document.getElementById('articles-grid');
+  const filtered = currentFilter === 'all'
+    ? articlesData
+    : articlesData.filter(a => a.badge === currentFilter);
+
+  document.getElementById('article-count').textContent = filtered.length + '本';
+
+  grid.innerHTML = filtered.map(a => `
+    <div class="article-card" onclick="openArticleModal('${a.id}')">
+      <div class="card-top">
+        <span class="badge badge-${a.badge}">${getBadgeIcon(a.badge)} ${a.badgeLabel}</span>
+        <div class="card-meta">
+          <span class="card-category">${a.category}</span>
+          <span class="card-date">${a.date}</span>
+        </div>
+      </div>
+      <div class="card-title">${a.title}</div>
+      <div class="card-summary">${a.summary}</div>
+      <div class="yoshino-reading-preview">
+        <strong>🌿 吉野の読み</strong>
+        ${a.yoshinoReading.substring(0, 120)}${a.yoshinoReading.length > 120 ? '…' : ''}
+      </div>
+      <div class="card-footer">
+        <div class="card-tags">${a.tags.map(t => `<span class="tag">#${t}</span>`).join('')}</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="credibility">${renderStars(a.credibilityScore)}</div>
+          <span style="font-size:0.7rem;color:rgba(255,255,255,0.35);">信頼度</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function getBadgeIcon(badge) {
+  return badge === 'red' ? '🔴' : badge === 'yellow' ? '🟡' : '🟢';
+}
+
+function renderStars(score) {
+  let s = '';
+  for (let i = 1; i <= 5; i++) {
+    s += `<span class="${i <= score ? 'star' : 'star-empty'}">★</span>`;
+  }
+  return s;
+}
+
+function openArticleModal(id) {
+  const a = articlesData.find(x => x.id === id);
+  if (!a) return;
+
+  const sourcesHtml = [
+    ...(a.primarySources || []).map(s => `
+      <div class="modal-source-item">
+        <span class="modal-source-dot"></span>
+        <span>【一次資料】<a href="${s.url}" target="_blank" class="modal-source-link" rel="noopener noreferrer">${s.title}</a></span>
+      </div>`),
+    ...(a.japanSources || []).map(s => `
+      <div class="modal-source-item">
+        <span class="modal-source-dot" style="background:#fbbf24;"></span>
+        <span>【${s.media}】<a href="${s.url}" target="_blank" class="modal-source-link" style="color:#fbbf24;" rel="noopener noreferrer">${s.title}</a></span>
+      </div>`)
+  ].join('');
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-badge"><span class="badge badge-${a.badge}">${getBadgeIcon(a.badge)} ${a.badgeLabel}</span></div>
+    <div class="modal-title">${a.title}</div>
+    <div class="modal-meta">
+      <span class="card-category">${a.category}</span>
+      <span class="card-date">${a.date}</span>
+      <div class="credibility">${renderStars(a.credibilityScore)}</div>
+    </div>
+
+    <div class="modal-section-label">📋 概要</div>
+    <div class="modal-summary">${a.summary}</div>
+
+    <div class="modal-section-label">🌿 吉野の読み</div>
+    <div class="modal-yoshino">${a.yoshinoReading}</div>
+
+    <div class="modal-section-label">📚 出典・参考資料</div>
+    <div class="modal-sources">${sourcesHtml || '<span style="font-size:0.8rem;color:rgba(255,255,255,0.4);">出典なし</span>'}</div>
+
+    <div class="modal-section-label">🏷 タグ</div>
+    <div class="card-tags" style="margin-top:4px;">${a.tags.map(t => `<span class="tag">#${t}</span>`).join('')}</div>
+
+    <div class="modal-disclaimer">
+      ⚠️ 本記事は動画制作のための情報整理を目的としています。医療診断・治療の推奨ではありません。健康上の判断は必ず医師・専門家にご相談ください。
+    </div>
+  `;
+
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+// ===== HISTORY =====
+const seriesIcons = { series001: '🍚', series002: '🏛️', series003: '🍬', series004: '🫙' };
+const seriesBg = {
+  series001: 'linear-gradient(135deg,#3d2b1f,#5c4033)',
+  series002: 'linear-gradient(135deg,#1f2a35,#2d3d4f)',
+  series003: 'linear-gradient(135deg,#3d2510,#6b3a18)',
+  series004: 'linear-gradient(135deg,#1a3020,#2d5035)'
+};
+
+function renderSeriesGrid() {
+  const grid = document.getElementById('series-grid');
+  grid.innerHTML = historySeriesData.map(s => `
+    <div class="series-card" id="sc-${s.id}" style="background:${seriesBg[s.id]||'linear-gradient(135deg,#2a2a2a,#3a3a3a)'}"
+         onclick="selectSeries('${s.id}')">
+      <div class="series-icon">${seriesIcons[s.id]||'📖'}</div>
+      <div class="series-title">${s.title}</div>
+      <div class="series-desc">${s.description.substring(0,100)}…</div>
+      <div class="series-ep-count">全 ${s.episodes} 話構成</div>
+      <div class="series-angle">💡 吉野視点：${s.yoshinoAngle.substring(0,80)}…</div>
+    </div>
+  `).join('');
+}
+
+function selectSeries(seriesId) {
+  document.querySelectorAll('.series-card').forEach(c => c.classList.remove('active'));
+  document.getElementById('sc-' + seriesId).classList.add('active');
+
+  const series = historySeriesData.find(s => s.id === seriesId);
+  const episodes = historyArticlesData.filter(e => e.seriesId === seriesId);
+
+  const container = document.getElementById('episode-list-container');
+  const titleEl = document.getElementById('episode-section-title');
+  const cardsEl = document.getElementById('episode-cards');
+
+  titleEl.textContent = `${seriesIcons[seriesId]||'📖'} ${series.title} — エピソード一覧`;
+
+  cardsEl.innerHTML = episodes.map(ep => {
+    const sourcesHtml = (ep.primarySources||[]).map(s =>
+      `<a href="${s.url}" target="_blank" class="ep-source-link" rel="noopener noreferrer">📎 ${s.title.substring(0,30)}…</a>`
+    ).join('');
+
+    return `
+      <div class="episode-card">
+        <div class="ep-num">E${ep.episode}</div>
+        <div>
+          <span class="ep-status ${ep.status}">${ep.status === 'published' ? '✅ 公開済' : '📋 制作予定'}</span>
+          <div class="ep-title">${ep.title}</div>
+          <div class="ep-summary">${ep.summary}</div>
+          <div class="ep-angle">
+            <strong>💡 吉野だからこそ語れる視点</strong>
+            ${ep.yoshinoAngle}
+          </div>
+          ${sourcesHtml ? `<div class="ep-sources">${sourcesHtml}</div>` : ''}
+          <div class="ep-duration">⏱ 想定尺：${ep.duration}</div>
+          <button class="script-btn" onclick="generateScript('${ep.id}')">📝 台本構成を生成</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.style.display = 'block';
+  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function generateScript(epId) {
+  const ep = historyArticlesData.find(e => e.id === epId);
+  if (!ep) return;
+  alert(`台本構成ガイド：\n\n【${ep.title}】\n\n0:00〜2:00  オープニング：今日のテーマ提示\n2:00〜8:00  歴史的背景の概説\n8:00〜18:00 一次資料をもとにした詳細解説\n18:00〜25:00 吉野視点：現代への示唆\n25:00〜28:00 まとめ・次回予告\n\n【使用すべき一次資料】\n${(ep.primarySources||[]).map(s => '・' + s.title).join('\n')}\n\n⚠️ 医師法・景品表示法に配慮し、断定的な健康効果の主張は避けること。`);
+}
+
+// ESC でモーダルを閉じる
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+</body>
+</html>

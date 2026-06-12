@@ -1,0 +1,166 @@
+[
+  {
+    "id": "art001",
+    "title": "Lancet誌が1000万人データで証明：超加工食品が全臓器のリスクを高める",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "食・栄養",
+    "date": "2025-11-20",
+    "summary": "2025年Lancet誌に掲載された超加工食品（UPF）に関する三部作研究が、45の解析のうち71%で超加工食品と健康悪化の直接的関連を示した。大腸がん・心疾患・糖尿病・うつ病・早死にリスクが統計的に有意に上昇することが1000万人規模のデータで確認された。",
+    "yoshinoReading": "これは「食べ物の質」の問題ではなく「食べ物の加工度」の問題。カロリーが同じでも、工業的に製造された食品は腸内細菌叢を破壊し、慢性炎症を引き起こす。西洋医学が長らく「バランスの良い食事」と言い続けてきた間に、何が起きていたのかを改めて問い直す必要がある。",
+    "primarySources": [
+      {
+        "title": "Lancet Regional Health 2025 – Ultra-processed food consumption and health",
+        "url": "https://www.thelancet.com/journals/lanwpc/article/PIIS2666-6065(24)00203-0/fulltext"
+      },
+      {
+        "title": "BMJ 2024 – Ultra-processed food exposure and adverse health outcomes",
+        "url": "https://www.bmj.com/content/384/bmj-2023-077310"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "戸塚クリニック院長ブログ",
+        "title": "2025年Lancet最新三部作：超加工食品（UPF）の健康リスクと今日からできる対策",
+        "url": "https://totsukaclinic.com/2025/11/20/%E3%80%902025%E5%B9%B4lancet%E7%9B%B4%E8%BF%91%E4%B8%89%E9%83%A8%E4%BD%9C%E3%80%91%E8%B6%85%E5%8A%A0%E5%B7%A5%E9%A3%9F%E5%93%81%EF%BC%88upf%EF%BC%89%E3%81%AE%E5%85%A8%E5%81%A5%E5%BA%B7%E3%83%AA/"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["超加工食品", "Lancet", "慢性疾患", "腸内環境"]
+  },
+  {
+    "id": "art002",
+    "title": "日本で合法の食品着色料「赤色106号」、アメリカ・EU・中国を含む多くの国で禁止",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食品添加物",
+    "date": "2025-10-01",
+    "summary": "日本の和菓子や福神漬けに使われる赤色106号は、肺がん・食道がんとの関連が指摘されており、欧米・アジア各国で禁止されているが日本では使用継続中。また赤色40号（アレルギーリスク）、黄色4号（子どもの多動との関連）なども日本では認可されているが、EUでは警告表示義務がある。",
+    "yoshinoReading": "これは科学の問題ではなく政治の問題。どの添加物を認可するかは食品業界と規制当局の関係性によって決まる。消費者が「成分表示を読む」習慣を持つことが最大の自衛策。歯周病治療の臨床でも、食品添加物の摂取を控えた患者の炎症マーカーが改善する事例を多数経験している。",
+    "primarySources": [
+      {
+        "title": "消費者庁：添加物規制に関する国際比較（令和4年11月更新）",
+        "url": "https://www.caa.go.jp/policies/policy/standards_evaluation/food_additives/qa_consumers/assets/001008754.pdf"
+      },
+      {
+        "title": "農林水産省：海外食品添加物規制早見表",
+        "url": "https://www.maff.go.jp/j/shokusan/sanki/soumu/attach/pdf/bunkakai-153.pdf"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "女性セブンプラス",
+        "title": "海外では使用が禁止・制限されているのに日本では使われている添加物が多数",
+        "url": "https://j7p.jp/?p=134538"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["食品添加物", "着色料", "国際比較", "規制"]
+  },
+  {
+    "id": "art003",
+    "title": "グリホサート残留基準値、2017年に日本政府が最大400倍に引き上げ——WHOは発がん性グループ2Aに分類",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "農薬・食の安全",
+    "date": "2025-09-15",
+    "summary": "除草剤グリホサートについて、日本は2017年に残留基準値を大幅緩和（ひまわり種子で0.1→40ppm、400倍）。一方WHOの国際がん研究機関IARCは2015年に発がん性グループ2Aに分類し、欧州では規制強化の流れが続く。輸入小麦・大豆への残留が国内消費者に影響する可能性がある。",
+    "yoshinoReading": "規制緩和のタイミングとアメリカからの農産物輸入拡大は無関係ではない。政治と医療・食の安全は不可分の問題。ただし「危険か安全か」の二項対立ではなく、長期的・累積的リスクを個人でどう管理するかを考えることが重要。国産・有機農産物の選択は一つの合理的な対策。",
+    "primarySources": [
+      {
+        "title": "IARC Monographs Volume 112: Glyphosate",
+        "url": "https://www.iarc.who.int/featured-news/media-centre-iarc-news-glyphosate/"
+      },
+      {
+        "title": "厚生労働省：グリホサートの残留基準設定審議資料",
+        "url": "https://www.mhlw.go.jp/file/05-Shingikai-11121000-Iyakushokuhinkyoku-Soumuka/0000168500.pdf"
+      },
+      {
+        "title": "衆議院：農薬グリホサート製剤の一日摂取許容量と安全性に関する質問主意書",
+        "url": "https://www.shugiin.go.jp/internet/itdb_shitsumon.nsf/html/shitsumon/a201188.htm"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "コープ自然派",
+        "title": "グリホサートを取り込みたくない！",
+        "url": "https://www.shizenha.net/glyphosate/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["グリホサート", "農薬", "残留基準", "発がん性", "輸入農産物"]
+  },
+  {
+    "id": "art004",
+    "title": "WHO・ICD-11が鍼灸・漢方を正式認定、北大がメカニズム解明——東洋医学の科学的根拠が確立へ",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "東洋医学",
+    "date": "2024-05-15",
+    "summary": "2019年WHO総会でICD-11（国際疾病分類）に東洋医学の章が正式追加。2024年5月のNHKスペシャルでは北海道大学・村上正晃教授らが鍼灸の神経回路メカニズムを解明し注目を集めた。鍼灸は感覚神経→中枢神経系→免疫系への経路で抗炎症効果を発揮することが科学的に証明されつつある。",
+    "yoshinoReading": "漢方・鍼灸の家系11代目として言えることは、先人たちが何千年もかけて臨床から積み上げたエビデンスを、西洋科学がようやく「証明」し始めたということ。重要なのは「なぜ効くか」の理解が進むことで、より精密な治療設計が可能になること。東西医学の統合こそが21世紀の医療の姿。",
+    "primarySources": [
+      {
+        "title": "WHO ICD-11 – Traditional Medicine Chapter",
+        "url": "https://icd.who.int/en"
+      },
+      {
+        "title": "北海道大学医学部：NHKスペシャル「東洋医学を科学する」出演のお知らせ（2024年5月）",
+        "url": "https://www.med.hokudai.ac.jp/news/2024/0515.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "NHK",
+        "title": "NHKスペシャル「東洋医学を科学する〜鍼灸・漢方薬の新たな世界〜」",
+        "url": "https://www.youtube.com/watch?v=GSyL41EpCL8"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["東洋医学", "鍼灸", "漢方", "WHO", "ICD-11", "科学的根拠"]
+  },
+  {
+    "id": "art005",
+    "title": "現代小麦は「別の食べ物」——品種改良でグルテン組成が変化、腸への影響を研究者が指摘",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "食・栄養",
+    "date": "2024-06-20",
+    "summary": "現代の小麦は品種改良により、消化しづらいグルテンたんぱく質を大量に含むよう変化している。農林水産省の資料によれば、グルテン関連疾患の有病率は米食文化圏のアジアではヨーロッパより顕著に低く、遺伝的因子と摂取頻度の両方が関与。腸内細菌叢への影響も報告されている。",
+    "yoshinoReading": "日本人が本来食べていたのは米を主食にした食事。戦後の食生活変化でパン・麺類の消費が急増し、それと時を同じくして腸の不調や自己免疫疾患が増加している。「パンは体に悪い」と言いたいのではなく、自分の体の反応をきちんと観察することが大切。",
+    "primarySources": [
+      {
+        "title": "農林水産省：グルテン関連の疾患とグルテンフリー",
+        "url": "https://www.maff.go.jp/j/syouan/keikaku/soukatu/okome_summary/04/functio_nality_03.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本経済新聞",
+        "title": "「グルテンフリー」の落とし穴 医学的に意義ある人は少数",
+        "url": "https://www.nikkei.com/article/DGXZQOSG2882H0Y5A320C2000000/"
+      }
+    ],
+    "credibilityScore": 3,
+    "tags": ["小麦", "グルテン", "品種改良", "腸内環境", "食文化"]
+  },
+  {
+    "id": "art006",
+    "title": "米国HHSが「超加工食品の健康リスクへの対処」を政策議題に——日本の食品行政は無反応",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "医療政策",
+    "date": "2026-01-15",
+    "summary": "2026年1月、米国保健福祉省（HHS）・FDA・USDAが共同で超加工食品の健康リスクを公衆衛生上の重大課題として位置付け、食事ガイドラインを更新。肥満・糖尿病・心血管疾患との関連が政府レベルで認定された。日本の食品安全・厚労省からは同様の動きは現時点で出ていない。",
+    "yoshinoReading": "アメリカが動いた。次はどこかが追随する。日本が動くのはその後。この「タイムラグ」の間に何万人もが予防できたはずの病気にかかる。政経医一体で考えなければ、公衆衛生の問題は解決しない。",
+    "primarySources": [
+      {
+        "title": "GMP Platform：HHS/FDA/USDA 超加工食品の健康リスクに対処",
+        "url": "https://www.gmp-platform.com/article_detail.html?id=32627"
+      }
+    ],
+    "japanSources": [],
+    "credibilityScore": 4,
+    "tags": ["超加工食品", "米国食事指針", "食品政策", "公衆衛生"]
+  }
+]
