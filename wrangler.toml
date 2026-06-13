@@ -1,0 +1,6 @@
+name = "yoshino-channel-pages"
+main = "worker-entry.js"
+compatibility_date = "2026-06-13"
+
+[assets]
+directory = "."
