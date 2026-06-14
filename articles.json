@@ -162,5 +162,34 @@
     "japanSources": [],
     "credibilityScore": 4,
     "tags": ["超加工食品", "米国食事指針", "食品政策", "公衆衛生"]
+  },
+  {
+    "id": "art007",
+    "title": "歯周病は「口だけの病気」ではない——糖尿病・心筋梗塞・認知症リスクを高める慢性炎症の正体",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "歯科・口腔",
+    "date": "2026-06-14",
+    "summary": "歯周病は口腔内の慢性炎症にとどまらず、全身疾患と深く関連することが多数の研究で示されている。歯周病原因菌や炎症性サイトカインが血流を介して全身に影響し、糖尿病の血糖コントロール悪化、心筋梗塞・脳卒中リスクの上昇、アルツハイマー型認知症との関連が報告されている。欧米では歯科と内科の連携が進む一方、日本では縦割り医療体制が依然として課題となっている。",
+    "yoshinoReading": "歯周病を単なる歯茎の炎症と思っている人は多いが、歯周病菌Porphyromonas gingivalisが産生する酵素ジンジパインはアミロイドβの蓄積を促進することが示されており、認知症との関連が国際的に注目されている。また歯周炎による慢性的なTNF-αやIL-6の上昇はインスリン抵抗性を高め、糖尿病の管理を困難にするという報告がある。口腔は全身の鏡。歯科医師として日々の診療で、口の中の状態が全身の健康状態を反映していることを実感する。",
+    "primarySources": [
+      {
+        "title": "WHO Oral Health Fact Sheet",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/oral-health"
+      },
+      {
+        "title": "厚生労働省 e-ヘルスネット：歯周病と全身の健康",
+        "url": "https://www.e-healthnet.mhlw.go.jp/information/teeth/h-04-002.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本歯周病学会",
+        "title": "歯周病と全身疾患",
+        "url": "https://www.perio.jp/general/systemic-disease/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["歯周病", "全身疾患", "糖尿病", "認知症", "慢性炎症"]
   }
 ]
