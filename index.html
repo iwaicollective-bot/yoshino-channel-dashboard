@@ -62,13 +62,6 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
 .header-title { font-size:14px; font-weight:700; color:var(--green); }
 .header-sub { font-size:10px; color:var(--muted); }
 .header-right { display:flex; align-items:center; gap:8px; }
-.btn-update {
-  background:none; border:1px solid var(--green); color:var(--green);
-  padding:5px 12px; border-radius:6px; font-size:11px; font-weight:700;
-  cursor:pointer; display:flex; align-items:center; gap:4px; transition:all .2s;
-}
-.btn-update:hover { background:var(--green); color:#000; }
-.btn-update.loading { opacity:.6; pointer-events:none; }
 .btn-logout {
   background:none; border:1px solid rgba(255,255,255,.2);
   color:var(--muted); padding:5px 10px; border-radius:6px;
@@ -161,6 +154,28 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
   white-space:nowrap; transition:all .2s;
 }
 .btn-script:hover { background:var(--green); color:#000; }
+.btn-delete {
+  background:none; border:1px solid rgba(248,113,113,.4); color:var(--red);
+  padding:4px 8px; border-radius:5px; font-size:11px; cursor:pointer;
+  white-space:nowrap; transition:all .2s;
+}
+.btn-delete:hover { background:rgba(248,113,113,.12); }
+.btn-delete.deleting { opacity:.5; pointer-events:none; }
+
+/* ── UPDATE LOG ── */
+.nav-btn.log.active { color:#a78bfa; border-bottom-color:#a78bfa; }
+#section-log { display:none; }
+.log-list { display:flex; flex-direction:column; gap:8px; }
+.log-item {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:8px; padding:10px 14px;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+.log-item:hover { border-color:rgba(167,139,250,.3); }
+.log-date { font-size:10px; color:var(--muted); white-space:nowrap; min-width:76px; }
+.log-title { font-size:13px; flex:1; min-width:0; line-height:1.4; cursor:pointer; }
+.log-title:hover { color:var(--green); }
+.log-cat { font-size:10px; color:var(--green); background:rgba(45,106,79,.3); padding:2px 7px; border-radius:4px; white-space:nowrap; }
 .stars { display:flex; gap:2px; }
 .star { font-size:10px; color:var(--yellow); }
 .star-e { font-size:10px; color:rgba(255,255,255,.15); }
@@ -301,7 +316,6 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
     </div>
     <div class="header-right">
       <a href="https://www.youtube.com/@yoshinodo" target="_blank" class="yt-btn">▶ YouTube</a>
-      <button class="btn-update" id="btnUpdate" onclick="triggerUpdate()">🔄 題材更新</button>
       <button class="btn-logout" onclick="logout()">ログアウト</button>
     </div>
   </header>
@@ -309,6 +323,7 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
   <nav class="nav">
     <button class="nav-btn active" onclick="showSection('news',this)">📰 健康・食ニュース分析</button>
     <button class="nav-btn hist" onclick="showSection('history',this)">📜 食の歴史シリーズ</button>
+    <button class="nav-btn log" onclick="showSection('log',this)">📋 更新履歴</button>
   </nav>
 
   <!-- NEWS -->
@@ -323,6 +338,14 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
         <span class="article-count" id="artCount"></span>
       </div>
       <div class="articles-grid" id="articlesGrid"></div>
+    </div>
+  </div>
+
+  <!-- UPDATE LOG -->
+  <div id="section-log">
+    <div class="container">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:16px">全記事の更新履歴（新しい順）。不要な記事はここから削除できます。</div>
+      <div class="log-list" id="logList"></div>
     </div>
   </div>
 
@@ -397,6 +420,8 @@ function showSection(sec, btn) {
   btn.classList.add('active');
   document.getElementById('section-news').style.display = sec==='news' ? 'block' : 'none';
   document.getElementById('section-history').style.display = sec==='history' ? 'block' : 'none';
+  document.getElementById('section-log').style.display = sec==='log' ? 'block' : 'none';
+  if (sec === 'log') renderLog();
 }
 
 // ===== ARTICLES =====
@@ -425,6 +450,7 @@ function renderArticles() {
         <div class="stars">${stars(a.credibilityScore)}</div>
         <span style="flex:1"></span>
         <button class="btn-script" onclick="event.stopPropagation();openScript('${a.id}')">📝 台本生成</button>
+        <button class="btn-delete" id="del-${a.id}" onclick="event.stopPropagation();deleteArticle('${a.id}')">🗑</button>
       </div>
     </div>
   `).join('');
@@ -603,30 +629,51 @@ ${(ep.primarySources||[]).map(s=>'・'+s.title+'\n  '+s.url).join('\n')}`;
   document.body.style.overflow='hidden';
 }
 
-// ===== UPDATE =====
-async function triggerUpdate() {
-  const btn = document.getElementById('btnUpdate');
-  btn.classList.add('loading');
-  btn.textContent = '⟳ 更新中...';
+// ===== UPDATE LOG =====
+function renderLog() {
+  const sorted = [...articles].sort((a,b) => b.date.localeCompare(a.date));
+  document.getElementById('logList').innerHTML = sorted.length === 0
+    ? '<div style="color:var(--muted);font-size:13px">記事がありません</div>'
+    : sorted.map(a => `
+      <div class="log-item" id="logrow-${a.id}">
+        <span class="log-date">${a.date}</span>
+        <span class="badge badge-${a.badge}" style="font-size:10px">${badgeIcon(a.badge)} ${a.badgeLabel}</span>
+        <span class="log-cat">${a.category}</span>
+        <span class="log-title" onclick="openArticle('${a.id}')">${a.title}</span>
+        <button class="btn-delete" id="logdel-${a.id}" onclick="deleteArticle('${a.id}')">🗑 削除</button>
+      </div>
+    `).join('');
+}
+
+// ===== DELETE =====
+async function deleteArticle(id) {
+  if (!confirm('この記事を削除しますか？\nGitHubから削除され、数分後にサイトに反映されます。')) return;
+  ['del-'+id, 'logdel-'+id].forEach(bid => {
+    const b = document.getElementById(bid);
+    if (b) { b.classList.add('deleting'); b.textContent = '削除中...'; }
+  });
   try {
-    const res = await fetch('/api/refresh', {method:'POST'});
+    const res = await fetch('/api/delete', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({id})
+    });
     if (res.ok) {
-      const data = await res.json();
-      if (data.articles) {
-        articles = data.articles;
-        renderArticles();
-        showToast('✅ 題材を更新しました（合計'+articles.length+'件）');
-      } else {
-        showToast('✅ 更新リクエストを送信しました');
-      }
+      articles = articles.filter(a => a.id !== id);
+      renderArticles();
+      renderLog();
+      showToast('✅ 削除しました（数分後にサイトへ反映）');
     } else {
-      showToast('⏳ しばらく待ってから再試行してください');
+      const d = await res.json().catch(()=>({}));
+      showToast('❌ 削除失敗: ' + (d.message || d.error || 'エラー'));
+      ['del-'+id, 'logdel-'+id].forEach(bid => {
+        const b = document.getElementById(bid);
+        if (b) { b.classList.remove('deleting'); b.textContent = bid.startsWith('logdel') ? '🗑 削除' : '🗑'; }
+      });
     }
   } catch(e) {
-    showToast('📡 更新リクエストを送信しました。数分後に反映されます');
+    showToast('❌ 通信エラー');
   }
-  btn.classList.remove('loading');
-  btn.textContent = '🔄 題材更新';
 }
 
 // ===== TOAST =====
