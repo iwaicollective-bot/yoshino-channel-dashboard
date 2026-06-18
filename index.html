@@ -68,6 +68,13 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
   font-size:11px; cursor:pointer;
 }
 .btn-logout:hover { color:var(--text); border-color:rgba(255,255,255,.4); }
+.btn-refresh {
+  background:var(--green-dim); color:#fff; border:none;
+  padding:5px 12px; border-radius:6px; font-size:11px; font-weight:700;
+  cursor:pointer; transition:opacity .15s;
+}
+.btn-refresh:hover { opacity:.85; }
+.btn-refresh:disabled { opacity:.5; cursor:not-allowed; }
 .yt-btn {
   background:rgba(255,0,0,.8); color:#fff; border:none;
   padding:5px 10px; border-radius:6px; font-size:11px; font-weight:700;
@@ -316,6 +323,7 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
     </div>
     <div class="header-right">
       <a href="https://www.youtube.com/@yoshinodo" target="_blank" class="yt-btn">▶ YouTube</a>
+      <button class="btn-refresh" id="refreshBtn" onclick="refreshContent()">🔄 更新</button>
       <button class="btn-logout" onclick="logout()">ログアウト</button>
     </div>
   </header>
@@ -403,6 +411,23 @@ function logout() {
   document.getElementById('app').style.display = 'none';
   document.getElementById('lockScreen').style.display = 'flex';
   document.getElementById('pwInput').value = '';
+}
+
+async function refreshContent() {
+  const btn = document.getElementById('refreshBtn');
+  btn.disabled = true; btn.textContent = '更新中…';
+  try {
+    const res = await fetch('/api/refresh', { method: 'POST' });
+    const data = await res.json();
+    if (res.status === 429) { showToast(data.message, 'error'); return; }
+    if (!res.ok) throw new Error(data.error || '不明なエラー');
+    showToast('✅ 記事を更新しました', 'success');
+    setTimeout(() => location.reload(), 1500);
+  } catch(e) {
+    showToast('❌ ' + e.message, 'error');
+  } finally {
+    btn.disabled = false; btn.textContent = '🔄 更新';
+  }
 }
 
 // ===== INIT =====
