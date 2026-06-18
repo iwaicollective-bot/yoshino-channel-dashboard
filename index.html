@@ -458,7 +458,8 @@ function filterArticles(badge, btn) {
 }
 
 function renderArticles() {
-  const filtered = currentFilter === 'all' ? articles : articles.filter(a => a.badge === currentFilter);
+  const filtered = (currentFilter === 'all' ? articles : articles.filter(a => a.badge === currentFilter))
+    .slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   document.getElementById('artCount').textContent = filtered.length + ' 件';
   document.getElementById('articlesGrid').innerHTML = filtered.map(a => `
     <div class="article-card" onclick="openArticle('${a.id}')">
