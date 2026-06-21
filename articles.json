@@ -802,5 +802,307 @@
     ],
     "credibilityScore": 4,
     "tags": ["高血圧", "降圧薬", "ガイドライン", "製薬業界", "過剰医療", "血圧基準値"]
+  },
+  {
+    "id": "art027",
+    "title": "アスパルテーム・スクラロース——WHO発がん性2B指定後も日本の「ゼロカロリー」飲料に使用継続",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "食品添加物",
+    "date": "2026-06-21",
+    "summary": "2023年7月、WHO傘下の国際がん研究機関IARCがアスパルテームを発がん性グループ2Bに分類した。同時期に複数の研究が人工甘味料の長期摂取が腸内フローラを乱し、逆に肥満・インスリン抵抗性を高める可能性を示した。日本では「ゼロカロリー」「糖質ゼロ」表示飲料への使用が引き続き認可されており、消費者への情報提供が不十分な状況が続いている。",
+    "yoshinoReading": "「カロリーゼロ＝健康」は完全な誤解。人工甘味料は血糖値を直接上げないが、腸内細菌に作用してグルコース不耐性を引き起こすという研究結果がある。甘みに反応する神経回路を繰り返し刺激することで「砂糖依存」と同様の行動変容が起こるという指摘もある。東洋医学の「甘味（かんみ）」は天然のものを適量摂ることを前提にしており、化学的に作られた人工の甘さは脾胃を欺く偽の刺激といえるかもしれない。",
+    "primarySources": [
+      {
+        "title": "IARC Monographs on Aspartame – Group 2B classification (2023)",
+        "url": "https://www.iarc.who.int/featured-news/monographs-aspartame/"
+      },
+      {
+        "title": "Suez J et al. 'Artificial sweeteners induce glucose intolerance by altering the gut microbiota', Nature 2014",
+        "url": "https://www.nature.com/articles/nature13793"
+      },
+      {
+        "title": "内閣府食品安全委員会：アスパルテームの安全性評価",
+        "url": "https://www.fsc.go.jp/sonota/tenkabutsu/aspartame.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "消費者庁",
+        "title": "食品添加物（甘味料）に関する情報",
+        "url": "https://www.caa.go.jp/policies/policy/standards_evaluation/food_additives/"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["人工甘味料", "アスパルテーム", "IARC", "腸内フローラ", "ゼロカロリー", "発がん性"]
+  },
+  {
+    "id": "art028",
+    "title": "プロトンポンプ阻害剤（胃薬）の長期服用——腸内細菌叢の崩壊・認知症・腎疾患リスクとの関連",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "医療政策",
+    "date": "2026-06-21",
+    "summary": "胃酸を強力に抑えるプロトンポンプ阻害剤（PPI：オメプラゾール・ランソプラゾール等）は日本で最も処方量の多い薬の一つ。長期使用が腸内細菌の多様性低下・マグネシウム欠乏・骨粗鬆症・認知症リスク増加・慢性腎疾患との関連を示す複数の大規模研究がある。胃酸は消化・病原体防御・ミネラル吸収に必須であり、不必要な長期投与の見直しが国際的に進んでいる。",
+    "yoshinoReading": "「胃が痛い→胃酸を抑える」というパターンは症状を消すだけで原因を治していない。東洋医学では「脾胃の気虚」——消化器のエネルギー不足——が胃の不調の根本とされ、食事の改善と漢方（六君子湯・安中散等）によるアプローチが根本治療に近い。",
+    "primarySources": [
+      {
+        "title": "Lazarus B et al. 'Proton Pump Inhibitor Use and Risk of Chronic Kidney Disease', JAMA Internal Medicine 2016",
+        "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2481157"
+      },
+      {
+        "title": "Gomm W et al. 'Association of Proton Pump Inhibitors With Risk of Dementia', JAMA Neurology 2016",
+        "url": "https://jamanetwork.com/journals/jamaneurology/fullarticle/2487379"
+      },
+      {
+        "title": "厚生労働省：プロトンポンプ阻害剤の適正使用に関する情報",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本消化器学会",
+        "title": "胃食道逆流症（GERD）診療ガイドライン",
+        "url": "https://www.jsge.or.jp/guideline/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["PPI", "胃薬", "腸内フローラ", "認知症", "長期服用リスク"]
+  },
+  {
+    "id": "art029",
+    "title": "日本人女性の鉄欠乏率は先進国最悪水準——慢性疲労・うつ・集中力低下の隠れた原因",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食・栄養",
+    "date": "2026-06-21",
+    "summary": "厚生労働省「国民健康・栄養調査」によると、日本人女性の約30%が鉄欠乏状態（フェリチン12ng/mL未満）にあるとされる。鉄はヘモグロビン合成だけでなく、ドーパミン・セロトニン産生・甲状腺機能・ミトコンドリアのエネルギー産生にも不可欠。女性の慢性疲労・気力低下・うつ症状・冷え性の背景に鉄欠乏が見過ごされているケースが多く、血清フェリチン測定が標準的でない日本の医療現場の課題が指摘されている。",
+    "yoshinoReading": "「疲れやすい」という訴えに医師が血液検査をしても「正常」と言うケースが多い。なぜならヘモグロビンが正常でも貯蔵鉄（フェリチン）が枯渇しているケースが見落とされるから。東洋医学では「血虚（けっきょ）」として倦怠感・顔色不良・不眠・生理不順を一括して捉え、当帰芍薬散・補中益気湯・十全大補湯などの「血を補う」処方で対応する。",
+    "primarySources": [
+      {
+        "title": "厚生労働省：国民健康・栄養調査（令和元年版）鉄摂取状況",
+        "url": "https://www.mhlw.go.jp/bunya/kenkou/eiyou/dl/h30-houkoku.pdf"
+      },
+      {
+        "title": "Beard JL. 'Iron biology in immune function, muscle metabolism and neuronal functioning', J Nutr 2001",
+        "url": "https://academic.oup.com/jn/article/131/2/568S/4686724"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本鉄バイオサイエンス学会",
+        "title": "鉄欠乏と女性の健康",
+        "url": "https://www.iron-bioscience.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["鉄欠乏", "フェリチン", "慢性疲労", "血虚", "漢方", "女性健康"]
+  },
+  {
+    "id": "art030",
+    "title": "遺伝子組換え食品の表示義務——EUは0.9%超で全表示、日本は5%未満なら非表示でOK",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食品添加物",
+    "date": "2026-06-21",
+    "summary": "EUは遺伝子組換え（GMO）成分が0.9%以上含まれる食品にすべて表示義務を課すが、日本では5%未満の「意図せざる混入」は表示不要とされており、対象食品も33品目に限定されている。加工食品に広く使われる大豆油・コーン油・醤油等はDNAたんぱく質が残存しないとして表示義務外。2023年の食品表示法改正でも実質的な変化はなく、消費者の知る権利の点で欧州との大きな差が残る。",
+    "yoshinoReading": "「GMOが危険かどうか」よりも「消費者が選択できるかどうか」の問題。表示がなければ知りようがなく、選ぶこともできない。農薬耐性GMO作物にはセットで農薬（グリホサート等）が大量使用されるという問題もある。食の安全・農業政策・貿易交渉が一体の問題であることを、消費者として理解しておく必要がある。",
+    "primarySources": [
+      {
+        "title": "EU: Regulation (EC) No 1829/2003 on genetically modified food and feed",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003R1829"
+      },
+      {
+        "title": "消費者庁：遺伝子組換え食品の表示制度",
+        "url": "https://www.caa.go.jp/policies/policy/food_labeling/quality/genetically_modified/"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "農林水産省",
+        "title": "遺伝子組換え農作物に関する情報",
+        "url": "https://www.maff.go.jp/j/syouan/nouan/carta/gmo.html"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["遺伝子組換え", "GMO", "食品表示", "EU規制", "消費者の権利"]
+  },
+  {
+    "id": "art031",
+    "title": "口呼吸が招く全身への悪影響——歯列不正・睡眠時無呼吸・免疫低下の連鎖を歯科医が解説",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "歯科・口腔",
+    "date": "2026-06-21",
+    "summary": "現代の子どもの約50%が口呼吸傾向にあるとされ、顎の発達不全・歯列不正・扁桃肥大・睡眠時無呼吸症候群・アレルギー悪化・免疫低下の原因となることが指摘されている。鼻呼吸では鼻毛・粘膜・副鼻腔が異物・細菌・ウイルスをフィルタリングし、一酸化窒素（NO）が殺菌・血管拡張作用を発揮するが、口呼吸ではこれらの防御機構が失われる。",
+    "yoshinoReading": "歯科医として診療の中で、口呼吸の子どもは歯列不正だけでなく風邪をひきやすい・アトピーがある傾向を強く感じる。東洋医学では「肺（はい）」は呼吸だけでなく皮膚・免疫とも関連する臓器とされ、肺の気が弱ると外邪の侵入を許しやすくなる。鼻呼吸の習慣化（口テープ法・あいうべ体操・舌の位置の矯正）は最も安価で効果的な健康投資の一つ。",
+    "primarySources": [
+      {
+        "title": "Lundberg JO et al. 'Nitric oxide and inflammation: the answer is blowing in the wind', Nature Immunology 2004",
+        "url": "https://www.nature.com/articles/ni0104-6"
+      },
+      {
+        "title": "厚生労働省 e-ヘルスネット：睡眠時無呼吸症候群",
+        "url": "https://www.e-healthnet.mhlw.go.jp/information/heart/k-02-003.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本小児歯科学会",
+        "title": "小児の口腔機能発達不全症",
+        "url": "https://www.jspd.or.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["口呼吸", "鼻呼吸", "歯列不正", "免疫", "睡眠時無呼吸", "一酸化窒素"]
+  },
+  {
+    "id": "art032",
+    "title": "ストレスが腸を壊すメカニズム——コルチゾール過剰が腸管バリアを損傷し慢性炎症を引き起こす",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "生活習慣",
+    "date": "2026-06-21",
+    "summary": "慢性的なストレスはHPA軸を過活性化しコルチゾールの過剰分泌を招く。コルチゾールは腸管上皮細胞間のタイトジャンクションを弛緩させ、腸管透過性亢進（リーキーガット症候群）を引き起こす可能性がある。細菌・毒素が腸管バリアを越えて体循環に入ることで全身性の慢性炎症・自己免疫疾患・アレルギーのリスクが高まることが研究されている。",
+    "yoshinoReading": "「病は気から」という言葉は医学的な真実。ストレスが炎症を起こし、炎症がさらなるストレス応答を引き起こす悪循環が、現代の多くの慢性病の根底にある。東洋医学では「肝気鬱結」——ストレスによる気の滞り——が胃腸に影響する仕組みは現代の腸脳相関の概念と一致する。加味逍遙散・柴胡疏肝散などの「肝を整える」処方は、ストレス性胃腸症状に古くから用いられてきた。",
+    "primarySources": [
+      {
+        "title": "Konturek PC et al. 'Stress and the gut: pathophysiology, clinical consequences', J Physiol Pharmacol 2011",
+        "url": "https://www.jpp.krakow.pl/journal/archive/12_11/articles/591.html"
+      },
+      {
+        "title": "厚生労働省 e-ヘルスネット：ストレスと疾患",
+        "url": "https://www.e-healthnet.mhlw.go.jp/information/heart/k-04-003.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本ストレス学会",
+        "title": "ストレスと身体疾患の関連",
+        "url": "https://jss2.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["ストレス", "コルチゾール", "リーキーガット", "腸管バリア", "HPA軸", "慢性炎症"]
+  },
+  {
+    "id": "art033",
+    "title": "日本の農薬使用量は先進国でも突出——EUが規制強化するネオニコチノイド・有機リン系が多用",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "農薬・食の安全",
+    "date": "2026-06-21",
+    "summary": "FAOの統計では日本の農薬使用量（単位面積あたり）は世界最高水準にある。EUが2018〜2022年に屋外使用を原則禁止したネオニコチノイド系農薬を日本では水稲・野菜に広く使用し続けており、2017年には一部品目の残留基準値が緩和された。有機リン系農薬も神経毒性への懸念から欧米で規制強化される中、日本での見直しは遅れている。",
+    "yoshinoReading": "「日本の野菜は安全」という認識は農薬問題を考えると単純ではない。国産野菜でも残留農薬検査は全体の一部しか行われておらず、複数農薬の複合暴露リスクは評価されていない。自衛策として有機農産物や特別栽培農産物を選ぶことに加え、肝の気血を養い排毒を助ける食材（ごぼう・クルクミン・海藻）を日常的に取り入れることも大切。",
+    "primarySources": [
+      {
+        "title": "FAO: Pesticides Use Indicators Database",
+        "url": "https://www.fao.org/faostat/en/#data/RP"
+      },
+      {
+        "title": "農林水産省：農薬の使用実態調査",
+        "url": "https://www.maff.go.jp/j/nouyaku/n_zanryu/index.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "農民連食品分析センター",
+        "title": "輸入食品・国産食品の残留農薬検査結果",
+        "url": "https://www.nouminren.ne.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["農薬", "ネオニコチノイド", "残留農薬", "FAO", "EU規制", "食の安全"]
+  },
+  {
+    "id": "art034",
+    "title": "水道水の塩素と腸内細菌——残留塩素が善玉菌にも抗菌作用を持つという見逃されがちな問題",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "環境・毒素",
+    "date": "2026-06-21",
+    "summary": "日本の水道水は法律により蛇口で0.1mg/L以上の残留塩素を保つことが義務付けられており、病原体除去という公衆衛生上の役割を果たしている。一方、塩素は病原菌だけでなく腸内の乳酸菌・ビフィズス菌などの善玉菌にも抗菌作用を持つという指摘がある。動物実験では塩素水の長期摂取が腸内細菌叢の多様性を低下させるという報告がある。",
+    "yoshinoReading": "水道水の塩素はインフラとして必要だが、腸内環境へのリスクとして知っておく価値はある。浄水器・ブリタ式フィルター・煮沸により残留塩素は大幅に減少する。東洋医学では水の質が気血の質に直結するという考えがある。発酵食品や食物繊維を意識的に摂ることで腸内細菌叢の回復力を高めることも並行して重要。",
+    "primarySources": [
+      {
+        "title": "Pang X et al. 'Influence of chlorinated water on intestinal microflora of mice', Chinese Journal of Microbiology 2012",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23252360/"
+      },
+      {
+        "title": "厚生労働省：水道水質基準について",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/topics/bukyoku/kenkou/suido/kijun/kijunchi.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "国土交通省 水管理・国土保全局",
+        "title": "水道の消毒・塩素について",
+        "url": "https://www.mlit.go.jp/mizukokudo/sewerage/crd_sewerage_tk_000150.html"
+      }
+    ],
+    "credibilityScore": 3,
+    "tags": ["水道水", "塩素", "腸内フローラ", "浄水器", "環境毒素"]
+  },
+  {
+    "id": "art035",
+    "title": "スタチン（コレステロール薬）の神話——コレステロールはホルモン・神経・細胞膜の材料",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "医療政策",
+    "date": "2026-06-21",
+    "summary": "スタチン系薬剤（コレステロール低下薬）は世界で最も売れている薬の一つだが、2019年にBMJに掲載された系統的レビューでは一次予防（心臓病になっていない人への予防投与）における死亡率改善効果に疑問が呈されている。コレステロールはステロイドホルモン・細胞膜・神経伝達の材料であり、スタチン服用者の一部に筋肉痛・認知機能低下・糖尿病リスク上昇が報告されている。",
+    "yoshinoReading": "「コレステロールが高い＝危険」という単純な図式は、1960年代の研究（後に方法論的問題が指摘された）が起源。日本でも「悪玉コレステロール（LDL）の基準値」が繰り返し引き下げられ、薬が必要な人が増え続けている。コレステロール値は食事だけでなく炎症・ストレス・甲状腺機能にも影響されるため、数値だけを見て薬を処方する前に根本原因の探索が必要。東洋医学では脂質代謝は「肝・脾・腎」の機能と密接に関連するとされている。",
+    "primarySources": [
+      {
+        "title": "Abramson JD et al. 'Should people at low risk of cardiovascular disease take a statin?', BMJ 2013",
+        "url": "https://www.bmj.com/content/347/bmj.f6123"
+      },
+      {
+        "title": "Sattar N et al. 'Statins and risk of incident diabetes: a collaborative meta-analysis', Lancet 2010",
+        "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(09)61965-6/fulltext"
+      },
+      {
+        "title": "日本動脈硬化学会：動脈硬化性疾患予防ガイドライン2022",
+        "url": "https://www.j-athero.org/jp/general/ge_guide/"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本経済新聞",
+        "title": "コレステロール薬、投与基準見直し議論",
+        "url": "https://www.nikkei.com/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["スタチン", "コレステロール", "過剰医療", "製薬業界", "LDL", "心血管疾患"]
+  },
+  {
+    "id": "art036",
+    "title": "漢方薬の保険適用は世界の宝——148処方が保険対象も、医師の漢方教育は年わずか2〜4時間の矛盾",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "東洋医学",
+    "date": "2026-06-21",
+    "summary": "日本は世界で唯一、漢方製剤が公的医療保険の適用を受けている国の一つ。2023年時点で148処方が保険収載されており、患者が低コストで漢方治療を受けられる世界的に稀な環境がある。一方、医学部での漢方教育は必修化されているが、カリキュラムは2〜4時間と極めて少なく、多くの医師は卒業後に独学するしかない状況が続いている。",
+    "yoshinoReading": "漢方の家系11代目・歯科医師として感じることは、日本は漢方を保険適用している世界的な宝を持ちながら、それを使いこなす人材育成が追いついていないということ。漢方はツムラ等の製剤を処方するだけでなく、患者の「証（しょう）」——体質・状態——を見極めて処方を選ぶ技術が本質。この技術習得には長い修練が必要だが、医学教育の中でその機会が与えられていない。東西医学の統合医療を担う人材を育てるための教育改革が急務。",
+    "primarySources": [
+      {
+        "title": "厚生労働省：漢方製剤の薬価基準への収載状況",
+        "url": "https://www.mhlw.go.jp/topics/2009/04/tp0401-1.html"
+      },
+      {
+        "title": "日本東洋医学会：漢方医学教育の現状と課題",
+        "url": "https://www.jsom.or.jp/"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本医師会雑誌",
+        "title": "卒前・卒後漢方教育の現状",
+        "url": "https://www.med.or.jp/nichinews/"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["漢方", "保険適用", "東洋医学", "医学教育", "統合医療", "処方"]
   }
 ]
