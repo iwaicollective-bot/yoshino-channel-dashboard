@@ -171,7 +171,7 @@
     "category": "食・栄養",
     "date": "2026-06-14",
     "summary": "砂糖や精製炭水化物の過剰摂取は急激な血糖上昇（血糖スパイク）を引き起こし、インスリン抵抗性・終末糖化産物（AGEs）の蓄積・慢性炎症という悪循環を生じさせる。WHO（2015年）は遊離糖の摂取を総エネルギーの5〜10%未満に抑えるよう勧告しており、日本人の砂糖摂取との乖離が課題とされている。東洋医学では「甘味の過剰は脾を傷める」と古くから指摘されており、現代の科学的知見と概念的に一致する。",
-    "yoshinoReading": "歯科医師として日々の診療で実感するのは、甘いものを多く摂取する患者の歯周炎が重症化しやすいという臨床的傾向がある点。血糖値の急上昇が炎症性サイトカイン（TNF-α、IL-1β）の分泌を増加させ、歯周組織の炎症を悪化させる可能性がある機序として注目されている。漢方の観点では精製白砂糖は「湿熱」を生じさせるとされる。「湿」は体内の余分な水分・粘稠物質の停滞、「熱」は炎症状態に対応する概念であり、これはAGEsによる組織老化・血管障害の機序と概念的に重なる。AGEsはコラーゲンに蓄積し組織の柔軟性を失わせるが、漢方の「血瘀（けつお）＝血の流れの停滞」とも対応する考え方がある。白米より玄米、白砂糖より天然甘味料、精製食品より一物全体食を選ぶことは、東西両医学が共通して支持できる実践的アプローチといえる。",
+    "yoshinoReading": "歯科医師として日々の診療で実感するのは、甘いものを多く摂取する患者の歯周炎が重症化しやすいという臨床的傾向がある点。血糖値の急上昇が炎症性サイトカイン（TNF-α、IL-1β）の分泌を増加させ、歯周組織の炎症を悪化させる可能性がある機序として注目されている。漢方の観点では精製白砂糖は「湿熱」を生じさせるとされる。「湿」は体内の余分な水分・粘稠物質の停滞、「熱」は炎症状態に対応する概念であり、これはAGEsによる組織老化・血管障害の機序と概念的に重なる。白米より玄米、白砂糖より天然甘味料、精製食品より一物全体食を選ぶことは、東西両医学が共通して支持できる実践的アプローチといえる。",
     "primarySources": [
       {
         "title": "WHO Guideline: Sugars intake for adults and children (2015)",
@@ -229,7 +229,7 @@
     "category": "食・栄養",
     "date": "2026-06-14",
     "summary": "腸内には約100兆個の細菌が生息し、全身の免疫細胞の約70%が腸管に集中している。2019年のNature Microbiology誌の大規模研究で腸内細菌の多様性低下がうつ病・生活満足度の低下と有意に相関することが示された。腸内細菌は迷走神経・短鎖脂肪酸・セロトニン産生を介して脳機能に直接影響し、腸内フローラの乱れ（ディスバイオーシス）は自己免疫疾患・精神疾患のリスク要因として国際的に注目されている。",
-    "yoshinoReading": "漢方の「脾胃（ひい）」は現代医学の消化器・腸に相当する概念で、「脾胃を養うことが万病の予防」という考え方は古典医学の根幹。セロトニンの約90%が腸で産生されるという事実は「うつは脳の病気」という一面的な理解を再考させる。歯科医師として臨床的に感じるのは、歯周病の重症患者に腸内環境の乱れを抱えるケースが多いということ。口腔と腸は同じ粘膜免疫系でつながっており、両者を並行してケアすることが全身の炎症を抑える上で重要と考えている。補中益気湯・六君子湯などの漢方は脾胃を補う代表的な処方として長く使われており、腸内環境改善への寄与を示唆する研究も報告されている。",
+    "yoshinoReading": "漢方の「脾胃（ひい）」は現代医学の消化器・腸に相当する概念で、「脾胃を養うことが万病の予防」という考え方は古典医学の根幹。セロトニンの約90%が腸で産生されるという事実は「うつは脳の病気」という一面的な理解を再考させる。歯科医師として臨床的に感じるのは、歯周病の重症患者に腸内環境の乱れを抱えるケースが多いということ。口腔と腸は同じ粘膜免疫系でつながっており、両者を並行してケアすることが全身の炎症を抑える上で重要と考えている。",
     "primarySources": [
       {
         "title": "Valles-Colomer M et al. 'The neuroactive potential of the human gut microbiota in quality of life and depression', Nature Microbiology 2019",
@@ -258,7 +258,7 @@
     "category": "歯科・口腔",
     "date": "2026-06-14",
     "summary": "水銀を含むアマルガム充填材は2013年水俣条約で段階的廃止が合意され、EUは2025年に全面禁止を決定したが日本では現在も保険適用で使用が続いている。2024年に米国国立毒性研究所（NTP）がフッ素の神経発達への影響に関する系統的レビューを公表し、飲料水フッ素化の推奨濃度見直しの議論が起きている。根管治療（神経除去）についても再感染リスクや全身への影響を再評価する研究が報告されている。",
-    "yoshinoReading": "アマルガムは長年「安全な材料」とされてきたが、水銀の慢性的な微量放出が免疫系・神経系に影響する可能性を示す研究が蓄積されている。漢方の視点では金属の「毒（どく）」が体内に蓄積することで気血の流れを阻害し、慢性疲労・免疫低下・神経症状につながるという考え方があり、これは重金属の慢性毒性の概念と概念的に共鳴する。歯科医師として患者に伝えたいのは、治療の選択肢を知ることの重要性。アマルガムをセラミックや金属フリー材料に替えることは技術的に可能であり、欧米ではすでに主流となっている。フッ素については適切な量での虫歯予防への寄与が認められている一方で、過剰摂取のリスクについても正しい情報を持つことが大切。",
+    "yoshinoReading": "アマルガムは長年「安全な材料」とされてきたが、水銀の慢性的な微量放出が免疫系・神経系に影響する可能性を示す研究が蓄積されている。漢方の視点では金属の「毒（どく）」が体内に蓄積することで気血の流れを阻害し、慢性疲労・免疫低下・神経症状につながるという考え方があり、これは重金属の慢性毒性の概念と概念的に共鳴する。アマルガムをセラミックや金属フリー材料に替えることは技術的に可能であり、欧米ではすでに主流となっている。",
     "primarySources": [
       {
         "title": "WHO Mercury and Health Fact Sheet",
@@ -291,7 +291,7 @@
     "category": "食・栄養",
     "date": "2026-06-14",
     "summary": "2021年スタンフォード大学の研究（Cell誌掲載）で、発酵食品を多く摂取するグループは腸内フローラの多様性が増加し炎症マーカーが有意に低下することが示された。味噌・納豆・ぬか漬けなどの日本の伝統発酵食品は乳酸菌・納豆菌・酵母などの多様な微生物を含み、腸内環境改善・免疫調整・慢性炎症の抑制に寄与する可能性がある。東洋医学では発酵食品は「脾胃を補い気血を巡らせる」食材として古くから重視されてきた。",
-    "yoshinoReading": "歯科臨床の視点から興味深いのは、口腔内細菌と腸内細菌の相互作用。善玉菌を豊富に含む発酵食品を日常的に摂ることは口腔内フローラの改善にも寄与する可能性があり、歯周病予防との関連を示唆するデータも報告されている。「味噌汁は日本人の健康の源」という言葉は昔から伝えられてきたが、それが現代科学で裏付けられつつある点は注目に値する。東洋医学では「一物全体食（いちぶつぜんたいしょく）」——食材を丸ごと活かすことの重要性——を説くが、発酵という工程は微生物の力を借りて食材の栄養を最大化する「一物全体」の実践といえる。現代の超加工食品中心の食事と対極にある日本の伝統食を見直すことは、科学的にも合理的な選択肢といえる。",
+    "yoshinoReading": "歯科臨床の視点から興味深いのは、口腔内細菌と腸内細菌の相互作用。善玉菌を豊富に含む発酵食品を日常的に摂ることは口腔内フローラの改善にも寄与する可能性があり、歯周病予防との関連を示唆するデータも報告されている。「味噌汁は日本人の健康の源」という言葉は昔から伝えられてきたが、それが現代科学で裏付けられつつある点は注目に値する。現代の超加工食品中心の食事と対極にある日本の伝統食を見直すことは、科学的にも合理的な選択肢といえる。",
     "primarySources": [
       {
         "title": "Wastyk HC et al. 'Gut-microbiota-targeted diets modulate human immune status', Cell 2021",
@@ -311,5 +311,496 @@
     ],
     "credibilityScore": 4,
     "tags": ["発酵食品", "腸内フローラ", "味噌", "納豆", "慢性炎症", "一物全体食"]
+  },
+  {
+    "id": "art012",
+    "title": "日本人の8割がビタミンD不足——免疫・骨・がん予防に必須の栄養素が「サンスクリーン文化」で枯渇",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食・栄養",
+    "date": "2026-05-10",
+    "summary": "国立環境研究所の調査によると日本人成人の約80%が血中ビタミンD不足（20ng/mL未満）の状態にある。ビタミンDは免疫制御・骨形成・がん抑制・気分安定に不可欠であり、不足は自己免疫疾患・うつ病・骨粗鬆症・多発性硬化症リスク増加と関連する。過度な日焼け止め使用と室内生活が主因として指摘されており、欧米では積極的なサプリメント補充が推奨されているが日本の医療現場での認識は低い。",
+    "yoshinoReading": "ビタミンDは「日光ビタミン」とも呼ばれ、皮膚が日光を浴びることで体内合成される。日焼けを恐れる文化が広まった結果、多くの日本人が慢性的な免疫低下状態に置かれている可能性がある。漢方では「陽気（ようき）」——太陽のエネルギーを体に取り入れること——が健康の基盤とされてきた。これはビタミンD合成を促す日光浴の重要性と概念的に一致する。食事からの補給には鮭・サンマ・きのこ類が有効であり、食と日光の両面からアプローチすることが重要。",
+    "primarySources": [
+      {
+        "title": "厚生労働省：日本人の食事摂取基準（2020年版）ビタミンD",
+        "url": "https://www.mhlw.go.jp/content/10904750/000586553.pdf"
+      },
+      {
+        "title": "Holick MF et al. 'Vitamin D deficiency', NEJM 2007",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMra070553"
+      },
+      {
+        "title": "国立環境研究所：日本人の紫外線曝露とビタミンD栄養状態",
+        "url": "https://www.nies.go.jp/"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本骨代謝学会",
+        "title": "ビタミンD不足・欠乏と骨・全身疾患",
+        "url": "https://www.jsbmr.umin.jp/"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["ビタミンD", "免疫", "骨粗鬆症", "日光", "自己免疫"]
+  },
+  {
+    "id": "art013",
+    "title": "サラダ油・マーガリンの真実——酸化した植物油が引き起こす慢性炎症と、日本の食用油行政の問題",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食品添加物",
+    "date": "2026-04-20",
+    "summary": "精製植物油（大豆油・コーン油・キャノーラ油）に含まれるn-6系リノール酸の過剰摂取はアラキドン酸カスケードを通じて炎症促進に働くことが研究で示されている。特に高温加熱した植物油はアルデヒド類（4-ヒドロキシノネナール）を生成し、細胞毒性・DNAダメージを引き起こす可能性がある。欧米では飽和脂肪酸への回帰やオリーブオイル推奨が進む一方、日本では依然として植物油の「健康神話」が根強い。",
+    "yoshinoReading": "「植物性は体に良い」という思い込みは戦後栄養学の産物。コレステロール悪玉説と同様、動物性脂肪の悪者扱いと植物油の推奨は、食品業界の利益と研究資金の流れと無関係ではない。漢方では「油は少量の良質なものを」という考えが基本。現代の油の過剰消費は「湿（しつ）」を体内に生じさせ、様々な慢性病の根底になるという視点から整理できる。伝統的に使われてきたごま油・えごま油・ラードの再評価を考える時期に来ている。",
+    "primarySources": [
+      {
+        "title": "Simopoulos AP. 'The importance of the omega-6/omega-3 fatty acid ratio', Biomed Pharmacother 2002",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0753332202002536"
+      },
+      {
+        "title": "Grootveld M et al. 'Health effects of oxidised heated oils', Foodservice Research International 2001",
+        "url": "https://www.mdpi.com/2072-6643/9/10/1083"
+      },
+      {
+        "title": "農林水産省：油脂類の摂取に関する情報",
+        "url": "https://www.maff.go.jp/j/syouan/seisaku/trans_fat/"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "消費者庁",
+        "title": "トランス脂肪酸に関する情報",
+        "url": "https://www.caa.go.jp/policies/policy/food_labeling/health_promotion/trans_fatty_acids/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["植物油", "炎症", "トランス脂肪酸", "n-6脂肪酸", "サラダ油"]
+  },
+  {
+    "id": "art014",
+    "title": "抗生物質の乱用が招く耐性菌——日本は抗菌薬処方量でOECD上位、腸内フローラへのダメージも深刻",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "医療政策",
+    "date": "2026-03-15",
+    "summary": "日本は外来患者への抗生物質処方量がOECD先進国の中で依然として高い水準にある。抗生物質は感染症治療に不可欠だが、ウイルス感染（風邪・インフルエンザ）への不適切処方が多く、腸内細菌叢を大規模に乱すリスクがある。WHO「薬剤耐性に関するグローバルアクションプラン（2015年）」は耐性菌を21世紀最大の公衆衛生上の脅威の一つとして位置付けている。",
+    "yoshinoReading": "抗生物質は必要な場面では救命的な薬だが、不適切に使われると腸内フローラを根こそぎ破壊する。善玉菌の回復には数ヶ月かかる場合があり、その間に免疫低下・カンジダ感染・アレルギー悪化が起こりやすくなる。東洋医学では「正気（せいき）」——体の抵抗力・自然治癒力——を守ることが治療の根本。抗生物質に頼る前に自然治癒を助けるアプローチを考えることが、長期的な健康につながる。",
+    "primarySources": [
+      {
+        "title": "WHO Global Action Plan on Antimicrobial Resistance (2015)",
+        "url": "https://www.who.int/publications/i/item/9789241509763"
+      },
+      {
+        "title": "OECD Health Statistics: Antibiotic consumption",
+        "url": "https://www.oecd.org/en/topics/sub-issues/antimicrobial-resistance.html"
+      },
+      {
+        "title": "厚生労働省：薬剤耐性（AMR）対策アクションプラン",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000120172.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "国立感染症研究所",
+        "title": "薬剤耐性菌感染症の動向",
+        "url": "https://www.niid.go.jp/niid/ja/amr.html"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["抗生物質", "耐性菌", "腸内フローラ", "AMR", "医療政策"]
+  },
+  {
+    "id": "art015",
+    "title": "ネオニコチノイド系農薬と子どもの神経発達障害——欧州が全面規制、日本は逆に規制緩和",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "農薬・食の安全",
+    "date": "2026-02-28",
+    "summary": "EUは2018年にネオニコチノイド系農薬3種（クロチアニジン・イミダクロプリド・チアメトキサム）を屋外使用禁止にし、ミツバチへの影響だけでなく子どもの神経発達への懸念を根拠の一つとした。日本は同時期に一部ネオニコチノイドの残留基準値を緩和しており、国際的な規制の流れと逆行している。ADHD・自閉症スペクトラム障害との関連を示す疫学研究が蓄積されつつある。",
+    "yoshinoReading": "農薬のリスク評価は「急性毒性」を基準にしていることが多いが、子どもが長期にわたって微量暴露されることの「慢性・累積毒性」は別の問題。脳が発達する時期に神経毒性を持つ物質に繰り返し暴露されることのリスクを、現在の規制基準は十分に考慮できていない可能性がある。漢方では「小児は気血未充（きけつみじゅう）」——子どもは大人より体が未熟で外邪の影響を受けやすい——とされており、子どもの食の安全には特段の配慮が必要という考えは東西医学に共通する。",
+    "primarySources": [
+      {
+        "title": "European Food Safety Authority: Neonicotinoids risk assessment (2018)",
+        "url": "https://www.efsa.europa.eu/en/news/neonicotinoids-risk-bees-unacceptable"
+      },
+      {
+        "title": "Bao W et al. 'Neonicotinoid insecticides and risk of ADHD', JAMA Pediatrics 2023",
+        "url": "https://jamanetwork.com/journals/jamapediatrics/article-abstract/2808385"
+      },
+      {
+        "title": "農林水産省：農薬の残留基準値設定",
+        "url": "https://www.maff.go.jp/j/nouyaku/n_zanryu/index.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "食品と暮らしの安全基金",
+        "title": "ネオニコチノイド農薬の危険性",
+        "url": "https://tabemono.info/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["ネオニコチノイド", "農薬", "神経発達障害", "ADHD", "子ども", "EU規制"]
+  },
+  {
+    "id": "art016",
+    "title": "精製塩と天然塩は「別の食品」——ミネラル除去が高血圧・電解質バランスを乱すメカニズム",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食・栄養",
+    "date": "2026-05-22",
+    "summary": "日本で広く流通する「食塩」（精製塩）は塩化ナトリウム99%以上で、天然塩に含まれるカリウム・マグネシウム・カルシウム等のミネラルがほぼ除去されている。欧州では伝統的な非精製塩（ゲランドの塩・岩塩等）が標準だが、日本は戦後の塩専売制度の影響で精製塩が主流となった。カリウム不足は高血圧リスクを高めることが多数の研究で示されており「塩は減らせばいい」という単純な議論を見直す必要がある。",
+    "yoshinoReading": "「塩を控えろ」という医療の常識は、精製塩とミネラル豊富な天然塩を同一視している点に問題がある。漢方では「鹹味（かんみ）」——塩辛い味——は腎を養う五味の一つとされ、適度な塩は生命活動に不可欠とされてきた。現代栄養学でも電解質バランスの維持には塩化ナトリウムだけでなくカリウム・マグネシウムとの比率が重要であることが分かっている。質の良い塩を適量摂ることと、精製塩を大量に使うことでは、体への影響がまったく異なる可能性がある。",
+    "primarySources": [
+      {
+        "title": "WHO Sodium intake for adults and children (2012)",
+        "url": "https://www.who.int/publications/i/item/9789241504836"
+      },
+      {
+        "title": "Aburto NJ et al. 'Effect of lower sodium intake on health', BMJ 2013",
+        "url": "https://www.bmj.com/content/346/bmj.f1326"
+      },
+      {
+        "title": "公益財団法人 塩事業センター：塩の種類と成分",
+        "url": "https://www.shiojigyo.com/siohyakka/kind/"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "厚生労働省 e-ヘルスネット",
+        "title": "ナトリウム（食塩）と健康",
+        "url": "https://www.e-healthnet.mhlw.go.jp/information/food/e-04-003.html"
+      }
+    ],
+    "credibilityScore": 3,
+    "tags": ["塩", "精製塩", "天然塩", "高血圧", "ミネラル", "電解質"]
+  },
+  {
+    "id": "art017",
+    "title": "睡眠不足は「免疫の自殺」——1週間の睡眠制限でNK細胞活性が70%低下するエビデンス",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "生活習慣",
+    "date": "2026-04-05",
+    "summary": "カリフォルニア大学バークレー校のマシュー・ウォーカー教授らの研究で、6時間未満の睡眠が1週間続くとNK細胞（がん細胞・ウイルス感染細胞を殺傷する免疫細胞）の活性が約70%低下することが示された。睡眠不足は慢性炎症・インスリン抵抗性・心血管疾患リスク増加とも関連し、日本人の平均睡眠時間はOECD加盟国中最短水準にある。",
+    "yoshinoReading": "「睡眠を削って仕事をする美徳」は日本文化に根付いているが、これは医学的に見れば免疫力を自ら破壊しているに等しい。東洋医学では夜間（特に23時〜3時）は「胆・肝経」の時間帯とされ、この時間帯の睡眠が気血の再生と解毒に最も重要とされる。現代の時計遺伝子（サーカディアンリズム）の研究は、この古代の知恵の科学的根拠を次々と明らかにしている。「早く寝ることが最高の薬」という言葉は、今や免疫学的な事実といえる。",
+    "primarySources": [
+      {
+        "title": "Irwin MR et al. 'Sleep loss activates cellular inflammatory signaling', Biological Psychiatry 2008",
+        "url": "https://www.biologicalpsychiatryjournal.com/article/S0006-3223(07)01045-0/fulltext"
+      },
+      {
+        "title": "Prather AA et al. 'Behaviorally assessed sleep and susceptibility to the common cold', Sleep 2015",
+        "url": "https://academic.oup.com/sleep/article/38/9/1353/2417971"
+      },
+      {
+        "title": "厚生労働省：健康づくりのための睡眠ガイド2023",
+        "url": "https://www.mhlw.go.jp/content/10904750/001181265.pdf"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "国立精神・神経医療研究センター",
+        "title": "睡眠と健康",
+        "url": "https://www.ncnp.go.jp/hospital/patient/sleep.html"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["睡眠", "免疫", "NK細胞", "慢性炎症", "サーカディアンリズム"]
+  },
+  {
+    "id": "art018",
+    "title": "子どものアレルギー疾患が40年で急増——衛生仮説・腸内フローラ・食品添加物の三角関係",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食品添加物",
+    "date": "2026-05-01",
+    "summary": "日本の食物アレルギー有病率は1980年代から急増し、小児の約10%が何らかの食物アレルギーを持つとされる。「衛生仮説」（過度に清潔な環境が免疫の過剰反応を招く）に加え、腸内フローラの多様性低下・食品添加物（乳化剤・保存料）が腸管バリア機能を損なう可能性が近年注目されている。特に乳化剤のポリソルベート80とカルボキシメチルセルロースが腸内フローラを乱すことが動物実験で示されている。",
+    "yoshinoReading": "アレルギーは「免疫の過剰反応」だが、その根本原因は腸内環境の乱れにある可能性が高い。漢方では「衛気（えき）」——体表面を守る免疫バリア——が弱ることで外邪（アレルゲン）の侵入を許すと理解する。衛気を補う処方（玉屏風散など）は現代免疫学の観点からも興味深い可能性があるが、まだ研究途上である。薬でアレルギー症状を抑えることと、腸内環境を整えて根本から体質を変えることは、目指す地点が根本的に異なる。",
+    "primarySources": [
+      {
+        "title": "Strachan DP. 'Hay fever, hygiene, and household size', BMJ 1989",
+        "url": "https://www.bmj.com/content/299/6710/1259"
+      },
+      {
+        "title": "Chassaing B et al. 'Dietary emulsifiers impact the mouse gut microbiota promoting colitis and metabolic syndrome', Nature 2015",
+        "url": "https://www.nature.com/articles/nature14232"
+      },
+      {
+        "title": "厚生労働省：食物アレルギーに関する調査研究",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/syokuhin-allergen.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "国立研究開発法人 医薬基盤・健康・栄養研究所",
+        "title": "アレルギー疾患と腸内フローラに関する研究",
+        "url": "https://www.nibiohn.go.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["アレルギー", "腸内フローラ", "衛生仮説", "乳化剤", "食品添加物", "小児"]
+  },
+  {
+    "id": "art019",
+    "title": "がん検診の「過剰診断」問題——甲状腺がん・乳がん検診で世界が見直しを進める中、日本は推進継続",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "医療政策",
+    "date": "2026-03-01",
+    "summary": "2025年にBMJが特集した「過剰診断（Overdiagnosis）」問題では、甲状腺がん・乳がん・前立腺がんの検診が治療を必要としないがんを見つけ出し、不必要な手術・放射線・抗がん剤治療につながるケースが多いと指摘されている。韓国では甲状腺がん検診の普及で診断数が15倍になったが死亡率はほぼ変わらず、「検診の誤謬」として国際的に議論されている。日本でも同様の構造が指摘されているが、検診推進の流れは変わっていない。",
+    "yoshinoReading": "「がんは早期発見・早期治療」という医療常識の見直しが始まっている。これは「検診が悪い」のではなく、「どのがんを、誰が、どのタイミングで検査すべきか」という精度を上げる議論。医療と患者の関係において「知る権利」と「知らされるリスク」を天秤にかける必要がある。東洋医学の「未病（みびょう）」——病気になる前の状態を整える——という概念は、病気を早期発見して切り取る発想とは根本的に異なる健康哲学。",
+    "primarySources": [
+      {
+        "title": "Vaccarella S et al. 'Worldwide thyroid cancer epidemic? The increasing impact of overdiagnosis', NEJM 2016",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMp1604412"
+      },
+      {
+        "title": "Welch HG et al. 'Overdiagnosis in cancer', JNCI 2010",
+        "url": "https://academic.oup.com/jnci/article/102/9/605/901449"
+      },
+      {
+        "title": "国立がん研究センター：がん検診の正しい理解",
+        "url": "https://ganjoho.jp/public/dia_tre/screening/index.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本経済新聞",
+        "title": "「がん過剰診断」問題、日本でも議論",
+        "url": "https://www.nikkei.com/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["がん検診", "過剰診断", "甲状腺がん", "乳がん", "医療政策"]
+  },
+  {
+    "id": "art020",
+    "title": "ステロイド薬の長期投与が招く副腎疲労——現代医学が「症状管理」に偏る構造的問題",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "医療政策",
+    "date": "2026-04-15",
+    "summary": "コルチコステロイド（ステロイド薬）はアトピー・気管支喘息・関節リウマチなどの治療に広く使われるが、長期投与は副腎皮質からの内因性コルチゾール産生を抑制し、副腎萎縮・副腎機能低下（副腎疲労）を招くリスクがある。欧米のファンクショナルメディシン領域ではHPA軸（視床下部-下垂体-副腎軸）の評価と根本原因の治療が重視されるが、日本の保険医療では症状管理の対症療法が主流のままである。",
+    "yoshinoReading": "ステロイドは炎症という「火」を消す緊急消火装置であって、なぜ火がついているかの原因は別に探らなければならない。東洋医学では慢性の炎症性疾患を「腎虚（じんきょ）」——腎のエネルギー不足——と関連づけて考えることが多く、これはHPA軸機能低下と概念的に重なる部分がある。漢方処方（八味地黄丸・六味地黄丸など）による「腎を補う」アプローチは、副腎機能の回復を助ける可能性について研究が進んでいる。根本治療と症状管理の両立が理想。",
+    "primarySources": [
+      {
+        "title": "Dinsen S et al. 'Why glucocorticoid withdrawal may sometimes be as dangerous as the treatment itself', European Journal of Internal Medicine 2013",
+        "url": "https://www.ejinme.com/article/S0953-6205(13)00173-1/fulltext"
+      },
+      {
+        "title": "厚生労働省 e-ヘルスネット：副腎皮質ステロイド薬",
+        "url": "https://www.e-healthnet.mhlw.go.jp/information/drug/di-04-001.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本アレルギー学会",
+        "title": "ステロイド薬の適正使用に関するガイドライン",
+        "url": "https://www.jsaweb.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["ステロイド", "副腎疲労", "HPA軸", "アトピー", "慢性炎症", "対症療法"]
+  },
+  {
+    "id": "art021",
+    "title": "マイクロプラスチックが人体に蓄積——胎盤・脳・心臓で検出、日本の規制は欧州に20年遅れ",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "環境・毒素",
+    "date": "2026-06-01",
+    "summary": "2024年、イタリアの研究チームがNEJM誌に心血管疾患患者の頸動脈プラーク内にマイクロ・ナノプラスチックを検出し、プラスチックを含むグループは心筋梗塞・脳卒中リスクが4.5倍高いと報告した。同年、人間の脳組織・精巣・胎盤からのマイクロプラスチック検出も相次いで報告されている。EUは2024年から意図的添加マイクロプラスチック規制を開始したが、日本の規制整備は遅れが指摘されている。",
+    "yoshinoReading": "私たちは毎週クレジットカード1枚分のプラスチックを食べているという試算がある。これが体の中でどんな化学物質を放出し、どんな炎症を引き起こすか——現代医学がようやく解明し始めたところ。漢方の観点では体内に蓄積した毒素は「邪（じゃ）」として気血の流れを阻害する。定期的な発汗・腸の活性化・解毒を助ける食材（ごぼう・海藻・緑茶）を取り入れることが、現代の「排毒」として有効かもしれない。",
+    "primarySources": [
+      {
+        "title": "Marfella R et al. 'Microplastics and Nanoplastics in Atheromas and Cardiovascular Events', NEJM 2024",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2309950"
+      },
+      {
+        "title": "Ragusa A et al. 'Plasticenta: First evidence of microplastics in human placenta', Environment International 2021",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0160412020322297"
+      },
+      {
+        "title": "環境省：マイクロプラスチック問題への対応",
+        "url": "https://www.env.go.jp/water/marine_litter/micro.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "国立環境研究所",
+        "title": "マイクロプラスチック研究プロジェクト",
+        "url": "https://www.nies.go.jp/whatsnew/microplastics.html"
+      }
+    ],
+    "credibilityScore": 5,
+    "tags": ["マイクロプラスチック", "心血管疾患", "環境汚染", "NEJM", "EU規制"]
+  },
+  {
+    "id": "art022",
+    "title": "更年期障害は「病気」ではない——東洋医学と現代医学が示す自然な移行期の正しい乗り越え方",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "東洋医学",
+    "date": "2026-05-15",
+    "summary": "更年期は女性の閉経前後（45〜55歳）のホルモン変動期であり、ほてり・不眠・倦怠感・気分変動などの症状は生理的な変化の一部である。西洋医学ではホルモン補充療法（HRT）が主流だが、乳がん・血栓リスクについての議論が続く。東洋医学（漢方）では加味逍遙散・桂枝茯苓丸・当帰芍薬散などが更年期症状に対して古くから使われており、一部の症状には高いエビデンスが蓄積されている。",
+    "yoshinoReading": "更年期は「腎精（じんせい）」が減少する時期と東洋医学では捉える。腎精は生命エネルギーの根本であり、これを補い・節約することが更年期を穏やかに乗り越える鍵。日々の食事（黒い食材・発酵食品・質の良いたんぱく質）・睡眠・適度な運動が腎を補う基本。漢方薬はその補助として有効だが、個人の体質に合わせた処方が重要。HRTを選択する場合も、東洋医学的なライフスタイルとの組み合わせが相乗効果を生む可能性がある。",
+    "primarySources": [
+      {
+        "title": "Lethaby A et al. 'Phytoestrogens for menopausal vasomotor symptoms', Cochrane Database 2007",
+        "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001395.pub3/full"
+      },
+      {
+        "title": "Takahashi K et al. 'Efficacy of traditional herbal medicine (Kampo) for menopausal symptoms', Menopause 2011",
+        "url": "https://journals.lww.com/menopausejournal/Abstract/2011/03000/Efficacy_of_Kampo_for_climacteric_symptoms.17.aspx"
+      },
+      {
+        "title": "厚生労働省 e-ヘルスネット：更年期障害",
+        "url": "https://www.e-healthnet.mhlw.go.jp/information/woman/w-03-001.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本産科婦人科学会",
+        "title": "更年期障害の診療ガイドライン",
+        "url": "https://www.jsog.or.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["更年期障害", "漢方", "ホルモン補充療法", "東洋医学", "腎精", "女性健康"]
+  },
+  {
+    "id": "art023",
+    "title": "日本の精神科薬の処方量は世界最高水準——向精神薬依存と「減薬」の現実",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "医療政策",
+    "date": "2026-06-10",
+    "summary": "日本は2000年代から精神科・心療内科の受診者数が増加し、睡眠薬・抗不安薬（ベンゾジアゼピン系）の処方量がOECD諸国の中で際立って多い時期が続いた。ベンゾジアゼピン系薬剤は長期使用で身体依存が形成され、突然の中断で重篤な離脱症状を引き起こすリスクがある。WHOは長期処方を推奨せず、英国NICEは認知行動療法・段階的減薬プロトコルを優先するガイドラインを示している。",
+    "yoshinoReading": "「眠れないから薬」「不安だから薬」という対症療法の連鎖が、薬に依存した生活を作り出してしまう。根本を問わずに症状だけを薬で押さえることの弊害は、10〜20年単位で現れる。東洋医学では心身の不調を「気血のバランス乱れ」として捉え、睡眠・食事・気功・漢方などで根本から整えるアプローチをとる。減薬は医師の指導のもとで段階的に行うことが絶対条件だが、薬に頼らない体づくりは同時並行で進められる。",
+    "primarySources": [
+      {
+        "title": "WHO mhGAP Intervention Guide – Mental health Gap Action Programme",
+        "url": "https://www.who.int/publications/i/item/9789241548069"
+      },
+      {
+        "title": "NICE guideline: Medicines associated with dependence or withdrawal symptoms (2022)",
+        "url": "https://www.nice.org.uk/guidance/ng215"
+      },
+      {
+        "title": "厚生労働省：向精神薬の適正使用に向けた取り組み",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000194565.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "朝日新聞デジタル",
+        "title": "睡眠薬・抗不安薬の長期処方問題",
+        "url": "https://www.asahi.com/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["向精神薬", "ベンゾジアゼピン", "減薬", "精神医療", "医療依存"]
+  },
+  {
+    "id": "art024",
+    "title": "花粉症は「体質」ではなく「腸内環境と環境毒素の蓄積」——根本治療への視点転換",
+    "badge": "green",
+    "badgeLabel": "重要背景情報",
+    "category": "東洋医学",
+    "date": "2026-03-20",
+    "summary": "日本人の約40%が罹患するとされる花粉症は、スギ花粉の増加（戦後植林政策の結果）と腸内環境の悪化・アレルギー素因の増加が複合して発症率が上昇したと考えられる。腸内フローラの乱れが免疫バランス（Th1/Th2バランス）を崩し、アレルギー反応を引き起こしやすくする機序が研究されている。東洋医学では花粉症を「肺・脾・腎」の機能低下として捉え、体質改善的なアプローチをとる。",
+    "yoshinoReading": "「毎年花粉症の薬を飲む」ことに慣れてしまっている人が多いが、これは根本治療ではない。腸内環境を整えることで花粉症症状が改善したという報告は複数ある。発酵食品・食物繊維・良質な脂質（EPA・DHA）の摂取でTh1/Th2バランスを整えることが、体質改善への道。漢方では小青竜湯（急性期）・補中益気湯（体質改善）・麦門冬湯（慢性鼻炎）などが使われるが、体質に合った処方を選ぶことが大切。花粉症をゼロにすることを目指すより、症状が出にくい体を作ることが現実的な目標。",
+    "primarySources": [
+      {
+        "title": "Sudo N et al. 'Postnatal microbial colonization programs the hypothalamic-pituitary-adrenal system for stress response in mice', J Physiol 2004",
+        "url": "https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/jphysiol.2004.063388"
+      },
+      {
+        "title": "環境省：花粉症環境保健マニュアル2022",
+        "url": "https://www.env.go.jp/chemi/anzen/kafun/manual.html"
+      },
+      {
+        "title": "厚生労働省 e-ヘルスネット：アレルギー性鼻炎（花粉症）",
+        "url": "https://www.e-healthnet.mhlw.go.jp/information/sensory/s-03-001.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本アレルギー学会",
+        "title": "アレルギー疾患の現状",
+        "url": "https://www.jsaweb.jp/modules/publics/index.php?content_id=4"
+      }
+    ],
+    "credibilityScore": 3,
+    "tags": ["花粉症", "アレルギー", "腸内フローラ", "Th1/Th2", "漢方", "体質改善"]
+  },
+  {
+    "id": "art025",
+    "title": "「食品添加物の一日摂取許容量」は単体評価——複数添加物の複合影響は未評価という規制の盲点",
+    "badge": "yellow",
+    "badgeLabel": "日本と海外で乖離",
+    "category": "食品添加物",
+    "date": "2026-04-30",
+    "summary": "食品添加物の安全性評価は各物質を単独で試験した「一日摂取許容量（ADI）」に基づくが、現実には一日に数十種類の添加物を同時摂取している。複数の添加物が組み合わさった「カクテル効果（複合毒性）」については評価基準が存在せず、国際的にも研究が緒についたばかりである。EUの欧州食品安全機関（EFSA）は2022年から混合物リスク評価の枠組み構築に着手したが、日本では同様の動きが見られない。",
+    "yoshinoReading": "「基準値以下だから安全」という論理は単体評価にしか成立しない。毎日コンビニ弁当・加工食品・飲料を摂取する現代人が、1日に何十種類もの添加物を「複合摂取」していることのリスクはほぼ未評価のまま。これは科学的に「安全が証明されている」のではなく「まだ調べていない」だけ。漢方では「未病」——病気になる前に兆候を察知して対処する——という予防的概念が根本にある。まだ「証明されていない」リスクを予防的に避けることは、個人が取れる合理的な選択肢。",
+    "primarySources": [
+      {
+        "title": "EFSA: Cumulative risk assessment of pesticides and food additives (2022)",
+        "url": "https://www.efsa.europa.eu/en/topics/topic/cumulative-risk-assessment"
+      },
+      {
+        "title": "Mesnage R et al. 'Ignoring adjuvant toxicity falsifies glyphosate safety assessment', Toxicol Rep 2019",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2214750019300260"
+      },
+      {
+        "title": "消費者庁：食品添加物の安全性評価",
+        "url": "https://www.caa.go.jp/policies/policy/standards_evaluation/food_additives/"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "内閣府食品安全委員会",
+        "title": "食品添加物に関するQ&A",
+        "url": "https://www.fsc.go.jp/sonota/food-additive/qa.html"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["食品添加物", "複合毒性", "ADI", "EFSA", "安全評価", "規制の盲点"]
+  },
+  {
+    "id": "art026",
+    "title": "降圧薬の過剰処方問題——血圧「正常値」の引き下げが生み出した数千万人の「患者」",
+    "badge": "red",
+    "badgeLabel": "日本未報道",
+    "category": "医療政策",
+    "date": "2026-05-30",
+    "summary": "2017年に米国心臓協会（AHA）が高血圧の定義を140/90から130/80mmHgに引き下げ、対象者が約3200万人増加した。日本でも高血圧治療ガイドラインの改定で降圧目標が厳格化されており、降圧薬処方数は増加傾向にある。一方、高齢者における過度な降圧治療は転倒・脳血流低下・認知機能低下リスクを高める可能性があるとする研究も相次ぎ、学術誌で論争が続いている。",
+    "yoshinoReading": "「血圧が高い＝病気」ではなく「その人の血管の状態に合わせた適切な血圧」という視点が欠けている。老化に伴い血管が硬くなれば、末梢まで血液を届けるために血圧は上がる——これは生理的な適応反応の側面もある。ガイドラインの基準値を制定した委員会メンバーと製薬会社の利益関係は、海外メディアでは繰り返し報じられている問題。東洋医学では血圧を「血の流れ（血行）」の問題として全身から捉え、食事・運動・ストレス管理を含む総合的なアプローチを重視する。",
+    "primarySources": [
+      {
+        "title": "Whelton PK et al. '2017 ACC/AHA High Blood Pressure Guideline', Hypertension 2018",
+        "url": "https://www.ahajournals.org/doi/10.1161/HYP.0000000000000065"
+      },
+      {
+        "title": "SPRINT Research Group. 'A randomized trial of intensive versus standard blood-pressure control', NEJM 2015",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1511939"
+      },
+      {
+        "title": "日本高血圧学会：高血圧治療ガイドライン2019",
+        "url": "https://www.jpnsh.jp/guideline.html"
+      }
+    ],
+    "japanSources": [
+      {
+        "media": "日本医事新報社",
+        "title": "降圧目標の厳格化をめぐる議論",
+        "url": "https://www.jmedj.co.jp/"
+      }
+    ],
+    "credibilityScore": 4,
+    "tags": ["高血圧", "降圧薬", "ガイドライン", "製薬業界", "過剰医療", "血圧基準値"]
   }
 ]
