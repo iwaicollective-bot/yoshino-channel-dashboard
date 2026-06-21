@@ -1,4 +1,4 @@
-name = "yoshino-channel-pages"
+name = "yoshino-channel-dashboard"
 main = "worker-entry.js"
 compatibility_date = "2026-06-13"
 
