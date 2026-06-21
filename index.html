@@ -6,14 +6,14 @@
 <title>吉野敏明チャンネル | テーマ出しダッシュボード</title>
 <style>
 :root {
-  --bg: #0d1626;
-  --surface: #152238;
-  --surface2: #1c2f4a;
-  --border: #2a4066;
-  --text: #f0f4ff;
-  --muted: #7e9ec0;
-  --green: #4a90d9;
-  --green-dim: #1e3d6b;
+  --bg: #120808;
+  --surface: #1f0c0c;
+  --surface2: #2a1010;
+  --border: #581818;
+  --text: #fff5f5;
+  --muted: #c09090;
+  --green: #dc2626;
+  --green-dim: #7f1d1d;
   --brown: #c9a84c;
   --brown-dim: #744210;
   --red: #f87171;
@@ -25,7 +25,7 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
 
 /* ── LOCK ── */
 #lockScreen {
-  position:fixed; inset:0; background:linear-gradient(135deg,#060e1a,#0d1626);
+  position:fixed; inset:0; background:linear-gradient(135deg,#0a0404,#120808);
   display:flex; align-items:center; justify-content:center; z-index:9999;
 }
 .lock-box {
@@ -138,8 +138,8 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
 }
 .badge-red { background:rgba(248,113,113,.15); color:var(--red); border:1px solid rgba(248,113,113,.3); }
 .badge-yellow { background:rgba(251,191,36,.12); color:var(--yellow); border:1px solid rgba(251,191,36,.25); }
-.badge-green { background:rgba(82,183,136,.15); color:var(--green); border:1px solid rgba(82,183,136,.3); }
-.art-category { font-size:10px; color:var(--green); background:rgba(30,61,107,.4); padding:2px 7px; border-radius:4px; }
+.badge-green { background:rgba(220,38,38,.15); color:var(--green); border:1px solid rgba(220,38,38,.3); }
+.art-category { font-size:10px; color:var(--green); background:rgba(127,29,29,.4); padding:2px 7px; border-radius:4px; }
 .art-date { font-size:10px; color:var(--muted); margin-left:auto; }
 
 .art-body { padding:10px 14px; }
@@ -182,7 +182,7 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
 .log-date { font-size:10px; color:var(--muted); white-space:nowrap; min-width:76px; }
 .log-title { font-size:13px; flex:1; min-width:0; line-height:1.4; cursor:pointer; }
 .log-title:hover { color:var(--green); }
-.log-cat { font-size:10px; color:var(--green); background:rgba(30,61,107,.4); padding:2px 7px; border-radius:4px; white-space:nowrap; }
+.log-cat { font-size:10px; color:var(--green); background:rgba(127,29,29,.4); padding:2px 7px; border-radius:4px; white-space:nowrap; }
 .stars { display:flex; gap:2px; }
 .star { font-size:10px; color:var(--yellow); }
 .star-e { font-size:10px; color:rgba(255,255,255,.15); }
@@ -261,7 +261,7 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
 .modal-title { font-size:16px; font-weight:700; line-height:1.5; margin-bottom:8px; }
 .modal-summary { font-size:13px; color:rgba(255,255,255,.8); line-height:1.8; }
 .modal-yoshino {
-  background:linear-gradient(135deg,rgba(30,61,107,.25),rgba(21,34,56,.35));
+  background:linear-gradient(135deg,rgba(127,29,29,.25),rgba(31,12,12,.35));
   border-left:3px solid var(--green); border-radius:0 8px 8px 0;
   padding:12px 14px; font-size:13px; line-height:1.8; color:rgba(255,255,255,.85);
 }
