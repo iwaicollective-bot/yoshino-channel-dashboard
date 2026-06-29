@@ -84,6 +84,7 @@ export async function onRequestPost(context) {
 
     const existingArticles = JSON.parse(artText);
     const meta = JSON.parse(metaText);
+    const usedTitles = existingArticles.map(a => a.title).filter(Boolean);
     const maxId = existingArticles.reduce((m, a) => {
       const n = parseInt((a.id || '').replace('art', ''), 10);
       return isNaN(n) ? m : Math.max(m, n);
@@ -105,6 +106,9 @@ export async function onRequestPost(context) {
           content: `吉野敏明チャンネル（歯科医師・漢方家系11代目・銀座エルディアクリニック院長）のテーマ出しダッシュボード用に、健康・食・東洋医学に関する新しい記事を1本生成してください。
 
 既存記事ID最大値: art${String(maxId).padStart(3,'0')}
+
+既出テーマ（重複厳禁・下記と被らないテーマで生成すること）:
+${usedTitles.join('\n')}
 
 以下のJSON形式で出力（JSON以外は出力しないこと）:
 {
@@ -131,7 +135,7 @@ export async function onRequestPost(context) {
     const newArticle = JSON.parse(claudeData.content[0].text.trim());
 
     const updatedArticles = [...existingArticles, newArticle];
-    const updatedMeta = { ...meta, lastUpdated: new Date().toISOString(), articleCount: updatedArticles.length };
+    const updatedMeta = { ...meta, lastUpdated: new Date().toISOString(), articleCount: updatedArticles.length, usedTopics: [...usedTitles, newArticle.title] };
 
     // index.html内のEMBEDDED_ARTICLES更新
     const articlesInline = JSON.stringify(updatedArticles, null, 0);
