@@ -593,12 +593,17 @@ function openSns(id) {
   const xFooter = `\n\n${xTags}`;
   const xBudget = 278 - tweetLen(xHeader) - tweetLen(xFooter);
   let xSummary = '';
-  if (xBudget > tweetLen('\n\n') + 4) {
+  if (xBudget > tweetLen('\n\n') + 10) {
     const sumBudget = xBudget - tweetLen('\n\n');
+    let built = '', lastKuten = '', lastToten = '';
     for (const ch of a.summary) {
-      if (tweetLen(xSummary + ch) > sumBudget - 1) { xSummary += '…'; break; }
-      xSummary += ch;
+      if (tweetLen(built + ch) > sumBudget) break;
+      built += ch;
+      if ('。！？'.includes(ch)) lastKuten = built;   // 句点：最優先
+      else if ('、'.includes(ch)) lastToten = built;  // 読点：次善
     }
+    // 句点で終われるなら句点、なければ読点、なければ概要なし
+    xSummary = lastKuten || lastToten;
   }
   const xText = xSummary ? `${xHeader}\n\n${xSummary}${xFooter}` : `${xHeader}${xFooter}`;
 
