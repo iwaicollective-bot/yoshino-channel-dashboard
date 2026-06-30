@@ -194,14 +194,14 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
 }
 .series-card {
   border-radius:var(--radius); padding:16px; cursor:pointer;
-  border:1px solid rgba(0,0,0,.1); transition:all .2s;
+  border:1px solid rgba(255,255,255,.12); transition:all .2s; color:#fff;
 }
-.series-card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.12); border-color:rgba(0,0,0,.2); }
-.series-card.active { border-color:var(--brown); }
+.series-card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.3); border-color:rgba(255,255,255,.25); }
+.series-card.active { border-color:var(--brown); box-shadow:0 0 0 2px var(--brown); }
 .series-icon { font-size:24px; margin-bottom:8px; }
-.series-title { font-size:13px; font-weight:700; margin-bottom:4px; line-height:1.4; }
-.series-desc { font-size:11px; color:var(--muted); line-height:1.5; margin-bottom:6px; }
-.series-count { font-size:10px; color:rgba(0,0,0,.35); }
+.series-title { font-size:13px; font-weight:700; margin-bottom:6px; line-height:1.4; color:#fff; }
+.series-desc { font-size:11px; color:rgba(255,255,255,.72); line-height:1.6; margin-bottom:8px; }
+.series-count { font-size:10px; color:rgba(255,255,255,.5); }
 
 .ep-section-title {
   font-size:13px; font-weight:700; color:var(--brown); margin-bottom:12px;
