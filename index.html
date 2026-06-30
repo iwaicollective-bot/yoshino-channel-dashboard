@@ -611,7 +611,7 @@ function openSns(id) {
   const igText = `【${a.title}】\n\n${a.summary}\n\n────────────────\n\n🌿 吉野先生の読み解き\n\n${a.yoshinoReading}\n\n────────────────\n\n⚠️ この情報は動画制作のための情報整理目的です。\n医療診断・治療の推奨ではありません。\n\n.\n.\n.\n${igHashtags}`;
 
   const fbSrcs = (a.primarySources||[]).slice(0,2).map(s=>`📎 ${s.title}`).join('\n');
-  const fbText = `📌 ${a.title}\n\n${a.summary}\n\n────────────────\n\n🌿 吉野敏明先生（銀座エルディアクリニック院長・漢方家系11代目）の視点\n\n${a.yoshinoReading}\n\n────────────────\n\n${fbSrcs ? fbSrcs+'\n\n' : ''}⚠️ 本投稿は動画制作のための情報整理目的です。医療診断・治療の推奨ではありません。\n\n#吉野敏明 #健康情報 #${(a.tags||[a.category])[0]||a.category}`;
+  const fbText = `📌 ${a.title}\n\n${a.summary}\n\n────────────────\n\n🌿 吉野敏明先生（銀座エルディアクリニック院長）の視点\n\n${a.yoshinoReading}\n\n────────────────\n\n${fbSrcs ? fbSrcs+'\n\n' : ''}⚠️ 本投稿は動画制作のための情報整理目的です。医療診断・治療の推奨ではありません。\n\n#吉野敏明 #健康情報 #${(a.tags||[a.category])[0]||a.category}`;
 
   const SNS = [
     { id:'x',  label:'𝕏 (Twitter)', text:xText,  max:280 },
