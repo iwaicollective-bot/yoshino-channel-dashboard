@@ -155,6 +155,12 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
   white-space:nowrap; transition:all .2s;
 }
 .btn-script:hover { background:var(--green); color:#000; }
+.btn-sns {
+  background:none; border:1px solid #7c3aed; color:#7c3aed;
+  padding:4px 10px; border-radius:5px; font-size:11px; cursor:pointer;
+  white-space:nowrap; transition:all .2s;
+}
+.btn-sns:hover { background:#7c3aed; color:#fff; }
 .btn-delete {
   background:none; border:1px solid rgba(248,113,113,.4); color:var(--red);
   padding:4px 8px; border-radius:5px; font-size:11px; cursor:pointer;
@@ -274,6 +280,21 @@ body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Yu 
   border-radius:8px; padding:16px; font-size:12px; line-height:1.8;
   color:var(--text); white-space:pre-wrap; margin-top:4px;
 }
+.sns-tabs { display:flex; gap:6px; margin:12px 0 10px; }
+.sns-tab {
+  flex:1; padding:7px 4px; border:1px solid var(--border); border-radius:6px;
+  background:transparent; color:var(--muted); font-size:11px; font-weight:700;
+  cursor:pointer; transition:all .15s;
+}
+.sns-tab.active { background:#7c3aed; color:#fff; border-color:#7c3aed; }
+.sns-content { display:none; }
+.sns-content.active { display:block; }
+.sns-text {
+  white-space:pre-wrap; font-size:12px; line-height:1.9; color:var(--text);
+  background:var(--surface2); border:1px solid var(--border);
+  padding:12px; border-radius:8px; max-height:320px; overflow-y:auto;
+}
+.sns-char-count { font-size:11px; color:var(--muted); margin-top:5px; text-align:right; }
 
 /* ── TOAST ── */
 .toast {
@@ -453,6 +474,7 @@ function renderArticles() {
         <div class="stars">${stars(a.credibilityScore)}</div>
         <span style="flex:1"></span>
         <button class="btn-script" onclick="event.stopPropagation();openScript('${a.id}')">📝 台本生成</button>
+        <button class="btn-sns" onclick="event.stopPropagation();openSns('${a.id}')">📱 SNS</button>
         <button class="btn-delete" id="del-${a.id}" onclick="event.stopPropagation();deleteArticle('${a.id}')">🗑</button>
       </div>
     </div>
@@ -536,6 +558,61 @@ ${(a.primarySources||[]).map(s=>'・'+s.title+'\n  '+s.url).join('\n')}
   `;
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow='hidden';
+}
+
+// ===== SNS CAPTION MODAL =====
+function openSns(id) {
+  const a = articles.find(x=>x.id===id);
+  if (!a) return;
+
+  const baseTags = (a.tags||[]).map(t=>'#'+t.replace(/[\s・]/g,''));
+
+  const xTags = [...baseTags.slice(0,3), '#吉野敏明', '#健康'].join(' ');
+  const xSummary = a.summary.length > 90 ? a.summary.substring(0,90)+'…' : a.summary;
+  const xText = `【${a.badgeLabel}】${a.title}\n\n${xSummary}\n\n${xTags}`;
+
+  const igHashtags = [...baseTags, '#吉野敏明', '#日本の病を治す', '#健康', '#東洋医学', '#食の安全', '#医療の真実', '#自然健康法', '#腸活', '#漢方', '#予防医学'].join(' ');
+  const igText = `【${a.title}】\n\n${a.summary}\n\n────────────────\n\n🌿 吉野先生の読み解き\n\n${a.yoshinoReading}\n\n────────────────\n\n⚠️ この情報は動画制作のための情報整理目的です。\n医療診断・治療の推奨ではありません。\n\n.\n.\n.\n${igHashtags}`;
+
+  const fbSrcs = (a.primarySources||[]).slice(0,2).map(s=>`📎 ${s.title}`).join('\n');
+  const fbText = `📌 ${a.title}\n\n${a.summary}\n\n────────────────\n\n🌿 吉野敏明先生（銀座エルディアクリニック院長・漢方家系11代目）の視点\n\n${a.yoshinoReading}\n\n────────────────\n\n${fbSrcs ? fbSrcs+'\n\n' : ''}⚠️ 本投稿は動画制作のための情報整理目的です。医療診断・治療の推奨ではありません。\n\n#吉野敏明 #健康情報 #${(a.tags||[a.category])[0]||a.category}`;
+
+  const SNS = [
+    { id:'x',  label:'𝕏 (Twitter)', text:xText,  max:280 },
+    { id:'ig', label:'Instagram',   text:igText, max:null },
+    { id:'fb', label:'Facebook',    text:fbText, max:null },
+  ];
+
+  const contentsHtml = SNS.map(s => {
+    const charInfo = s.max
+      ? `${s.text.length} / ${s.max}文字${s.text.length > s.max ? ' ⚠️超過' : ''}`
+      : `${s.text.length}文字`;
+    return `<div class="sns-content${s.id==='x'?' active':''}" data-tab="${s.id}">
+      <div class="sns-text">${s.text}</div>
+      <div class="sns-char-count">${charInfo}</div>
+      <button onclick="navigator.clipboard.writeText(document.querySelector('.sns-content[data-tab=\\'${s.id}\\'] .sns-text').textContent).then(()=>showToast('✅ コピーしました'))"
+        style="margin-top:8px;background:var(--green-dim);color:#fff;border:none;padding:7px 14px;border-radius:6px;font-size:12px;cursor:pointer;width:100%">
+        📋 コピー
+      </button>
+    </div>`;
+  }).join('');
+
+  const tabsHtml = SNS.map(s =>
+    `<button class="sns-tab${s.id==='x'?' active':''}" data-tab="${s.id}" onclick="switchSnsTab('${s.id}')">${s.label}</button>`
+  ).join('');
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-title">📱 SNSキャプション：${a.title.length>28?a.title.substring(0,28)+'…':a.title}</div>
+    <div class="sns-tabs">${tabsHtml}</div>
+    ${contentsHtml}
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function switchSnsTab(id) {
+  document.querySelectorAll('.sns-tab').forEach(b => b.classList.toggle('active', b.dataset.tab===id));
+  document.querySelectorAll('.sns-content').forEach(c => c.classList.toggle('active', c.dataset.tab===id));
 }
 
 function closeModal() {
