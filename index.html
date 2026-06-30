@@ -567,9 +567,25 @@ function openSns(id) {
 
   const baseTags = (a.tags||[]).map(t=>'#'+t.replace(/[\s・]/g,''));
 
+  // Xは日本語1文字=2カウント（U+1100以上はすべて2）
+  function tweetLen(s) {
+    let n = 0;
+    for (const c of s) { n += c.codePointAt(0) >= 0x1100 ? 2 : 1; }
+    return n;
+  }
   const xTags = [...baseTags.slice(0,3), '#吉野敏明', '#健康'].join(' ');
-  const xSummary = a.summary.length > 90 ? a.summary.substring(0,90)+'…' : a.summary;
-  const xText = `【${a.badgeLabel}】${a.title}\n\n${xSummary}\n\n${xTags}`;
+  const xHeader = `【${a.badgeLabel}】${a.title}`;
+  const xFooter = `\n\n${xTags}`;
+  const xBudget = 278 - tweetLen(xHeader) - tweetLen(xFooter);
+  let xSummary = '';
+  if (xBudget > tweetLen('\n\n') + 4) {
+    const sumBudget = xBudget - tweetLen('\n\n');
+    for (const ch of a.summary) {
+      if (tweetLen(xSummary + ch) > sumBudget - 1) { xSummary += '…'; break; }
+      xSummary += ch;
+    }
+  }
+  const xText = xSummary ? `${xHeader}\n\n${xSummary}${xFooter}` : `${xHeader}${xFooter}`;
 
   const igHashtags = [...baseTags, '#吉野敏明', '#日本の病を治す', '#健康', '#東洋医学', '#食の安全', '#医療の真実', '#自然健康法', '#腸活', '#漢方', '#予防医学'].join(' ');
   const igText = `【${a.title}】\n\n${a.summary}\n\n────────────────\n\n🌿 吉野先生の読み解き\n\n${a.yoshinoReading}\n\n────────────────\n\n⚠️ この情報は動画制作のための情報整理目的です。\n医療診断・治療の推奨ではありません。\n\n.\n.\n.\n${igHashtags}`;
